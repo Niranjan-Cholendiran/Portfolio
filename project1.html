@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niranjan's Portfolio</title>
+    <link rel="stylesheet" href="style_project.css">
+    <script src="https://kit.fontawesome.com/90171aec82.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <a href="index.html#header"><img src="images/logo.png" class="logo"></a>
+            <ul class="menu" id="sidemenu">
+                <li><a href="index.html#header">Home</a></li>
+                <li><a href="index.html#about">About Me</a></li>
+                <li><a href="index.html#projects">My Work</a>
+                    <div class="sub-menu-1"> 
+                        <ul>
+                            <li class="sub-menu-2-hover"><a href="project1.html#header">Project Title 1</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="#Introduction-Content" onclick="opentab('Introduction-Content')">Introduction</a></li>
+                                        <li><a href="#Data-Preparation-Content" onclick="opentab('Data-Preparation-Content')">Data Preparation</a></li>
+                                        <li><a href="#Data-Exploration-Content" onclick="opentab('Data-Exploration-Content')">Data Exploration</a></li>
+                                        <li class="sub-menu-3-hover"><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Modeling</a>
+                                            <div class="sub-menu-3">
+                                                <ul>
+                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Clustering</a></li>
+                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">ARM</a></li>
+                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Naïve Bayes</a></li>
+                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Decision Tree</a></li>
+                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">SVMs</a></li>
+                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Regression</a></li>
+                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Neural Nets</a></li>
+                                                </ul>
+                                            </div>                                        
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sub-menu-2-hover"><a href="#">Project Title 2</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="#">Introduction</a></li>
+                                        <li><a href="#">Data Preparation</a></li>
+                                        <li><a href="#">Data Exploration</a></li>
+                                        <li class="sub-menu-3-hover"><a href="#">Modeling</a>
+                                            <div class="sub-menu-3">
+                                                <ul>
+                                                    <li><a href="#">Clustering</a></li>
+                                                    <li><a href="#">ARM</a></li>
+                                                    <li><a href="#">Naïve Bayes</a></li>
+                                                    <li><a href="#">Decision Tree</a></li>
+                                                    <li><a href="#">SVMs</a></li>
+                                                    <li><a href="#">Regression</a></li>
+                                                    <li><a href="#">Neural Nets</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sub-menu-2-hover"><a href="#">Project Title 3</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="#">Introduction</a></li>
+                                        <li><a href="#">Data Preparation</a></li>
+                                        <li><a href="#">Data Exploration</a></li>
+                                        <li class="sub-menu-3-hover"><a href="#">Modeling</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>                
+                </li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <h1>Inventory Optimization</h1>
+        </div>
+        <div class="image-credit"><a href="https://www.freepik.com/free-ai-image/diminishing-perspective-old-archive-shelves-glow-generated-by-ai_41283910.htm#query=inventory&position=41&from_view=search&track=sph&uuid=b9640a9c-497c-4233-b6ad-bb5a98163567">Image By vecstock</a>
+        </div>
+    </div>
+</div>
+
+<!-- -----------Project Contents---------- -->
+
+<div class="container">
+    <div class="tab-titles">
+        <p class="tab-links active-link" onclick="opentab('Introduction-Content')">Introduction</p>
+        <p class="tab-links" onclick="opentab('Data-Preparation-Content')">Data Preparation</p>
+        <p class="tab-links" onclick="opentab('Data-Exploration-Content')">Data Exploration</p>
+        <p class="tab-links" onclick="opentab('Modeling-Content')">Modeling</p>
+    </div>
+
+    <div class="tab-contents active-tab" id="Introduction-Content">
+        <div class="intro">
+            <h1 class="sub-title">Introduction</h1>
+            <p>Have you ever experienced the frustration of finding your favourite product out of stock just when you're ready to make a purchase? Well, it's not just a letdown for you but also a significant loss for retailers. In 2018, retailers lost out on $300 million in revenue due to poor inventory management, and that was before the pandemic. Pre-pandemic, the odds of shoppers seeing an out-of-stock message were 1 in 200. That figure rose to 1 in 59 in 2022, a 235% increase. In a survey, almost half of respondents (46%) indicated that overbuying inventory and buying the wrong type of products are top contributing factors to markdowns.</p>
+            <br>
+            <img src="images/inventrory_intro_quote.jpg" class= "intro-quote">
+            <p>This results in dissatisfied customers, decreased profits, high holding costs, expired inventory, and inevitable write-offs. But, who bears the responsibility for this inventory mismanagement? Products don't magically appear on shelves, right? They go through a complex distribution process involving multiple middlemen. In a typical One Level Channel distribution, the retailer stands between the manufacturer and the customer, serving as the crucial link responsible for managing inventory to meet customer demand and maximize profit.</p>
+            <br>
+            <img src="images/inventrory_one_level_distribution.png" class= "intro-quote">
+            <p>Yet, managing inventory is far from simple. It presents countless challenges, including poor demand forecasting, the impact of seasonality and trends, delays in purchasing, limitations in production capacity, delayed fulfilment, and more. Therefore, every retailer must implement a <span>framework to optimize inventory management by identifying the ideal time for purchases</span> to minimize overstocking or stockouts while maximizing revenue.</p>
+        </div>
+    </div>
+
+    <div class="tab-contents" id="Data-Preparation-Content">
+        <div class="intro">
+            <h1 class="sub-title">Data Collection</h1>
+            <br><br>
+            <p>This project requires a thorough level of data encompassing sales, product, inventory, and purchase details. Accordingly, the data was collected from 2 major sources:</p>
+            <br><br>
+            <h3>Source 1: PWC’s Inventory Analysis Case Study Data files</h3>
+            <br><br>
+            <p>PWC offers a combination of 6 datasets covering end-to-end product distribution operations of Bibitor LLC, a liquor store chain in the fictional state of Lincoln. It is a major retailer with approximately 80 locations and total sales more than $450 million within a single year. <b>These datasets cover all transactions occurring between the retailer (Bibitor), vendors and customers throughout the year 2016.</b></p>
+            <br>
+            <h4>Raw Data Overview:</h4>
+            <ul>
+                <li>1. Beginning & Ending Inventory <i>(BegInvFINAL12312016.csv & EndInvFINAL12312016.csv):</i>
+                    <ul>
+                        <li>Description: Provides information of the products’ inventory availability at the beginning and end of the year across all stores.</li>
+                        <li>Data Granularity: InventoryId</li>
+                    </ul>
+                </li>
+                <li>2.  Purchases <i>(PurchasesFINAL12312016.csv):</i>
+                    <ul>
+                        <li>Description: Provides the complete purchase history of products by the retailer from various vendors, including fulfilment details.</li>
+                        <li>Data Granularity: Store + PONumber + Brand + ReceivingDate</li>
+                    </ul>
+                </li>
+                <li>3.  Purchase Prices <i>(2017PurchasePricesDec.csv):</i>
+                    <ul>
+                        <li>Description: Contains the purchase costs incurred by the retailer for each product</li>
+                        <li>Data Granularity: Brand (A combination of product SKU, vendor, and purchase price)</li>
+                    </ul>
+                </li>
+                <li>4.	Vendor Invoices <i>(VendorInvoices12312016.csv):</i>
+                    <ul>
+                        <li>Description: Presents details of the purchase invoices for every purchase order made.</li>
+                        <li>Data Granularity: POnumber</li>
+                    </ul>
+                </li>
+                <li>5.	Sales (SalesFINAL12312016.csv):</i>
+                    <ul>
+                        <li>Description: Provides the sales history of products across all retail stores</li>
+                        <li>Data Granularity: Store + Brand + SalesDate</li>
+                    </ul>
+                </li>
+                <li>Download the raw data <a href="https://www.pwc.com/us/en/careers/university-relations/data-and-analytics-case-studies-files.html" target="_blank">here</a></li>
+            </ul>
+            <br>
+            <h3>Source 2: OpenAI API</h3>
+            <br><br>
+            <p>Data obtained from Source 1 primarily centres on transactions but lacks essential product details. The Bibitor dataset comprises over 11,000 Liquor SKUs, yet only provides descriptions without further particulars. Understanding the drivers of product demand necessitates comprehensive product details. Therefore, the <a href="https://openai.com/blog/openai-api" target="_blank">OpenAI API</a> was used to gather the following information for each product:</p>
+            <br>
+            <ol>
+                <li><b>Alcohol Type:</b> The category of alcohol, including options such as Wine, Vodka, Whiskey, Rum, Tequila, and more.</li>
+                <li><b>Alcohol By Volume (ABV):</b> The percentage of alcohol content in the beverage, typically ranging from 0% to 100%.</li>
+                <li><b>Flavor Profile:</b> The sensory characteristics of the drink, encompassing flavor such as Herbal, Sweet, Spicy, Floral, Sour, and others.</li>
+            </ol>
+            <br>
+            <p>Download the raw data <a href="https://drive.google.com/drive/folders/1CQmhaoZkbAAt9IC7jwQBY4rPpPmHuxhT?usp=sharing" target="_blank">here</a></p>
+            <br>
+            <h4>API Components:</h4>
+            <br>
+            <P>Open API provides paid APIs to access their AI transformer models. For this project, the GPT model with the following components were used:</P>
+            <ul>
+                <li>1. Endpoint: <i>ChatCompletion</i></li>
+                <li>2. Parameters:</li>
+                <ul>
+                    <li>Model: <i>“gpt-3.5-turbo”</i></li>
+                    <li>Message: <i>Input Query</i></li>
+                </ul>
+            </ul>
+            <img src="images/inventory_api_components.jpg" class= "intro-quote">
+            <p>Find the code here [Link to code]</p>
+
+            <br><br>
+            <h1 class="sub-title">Data Preparation</h1>
+            <br><br>
+            <p>The collected raw data possessed the required granularity. However, it lacked structured, with tables containing redundant and overlapping information, as well as a few extraneous columns and unclean records. <b>Hence, a new set of analytical base tables with a structured Entity Relationship has been designed.</b></p>
+            <br>
+                <div style="text-align: center;">
+                    <iframe width="1000" height="500" src='https://dbdiagram.io/e/65bd8a35ac844320ae58ac4d/65c03f39ac844320ae6d38b2'> </iframe>
+                    <p><i>Note: Hover through the ERD diagram to highlight relationships and read description.</i></p>
+                </div>
+            <br>
+            <p>These analytical tables are high-quality, clean datasets compiled from both sources and are ready for direct utilization in analytical tasks. Note that these datasets are non-aggregated tables that can be seamlessly combined as per requirements.</p>
+            <br>
+            <h4>Data Preparation Steps:</h4>
+            <ul>
+                <li>1. Standardized “Size” column:</i>
+                    <ul>
+                        <li>Initially, the size column contained disparate units and noisy data. To rectify this, it was transformed into a uniform millimeter unit, following the removal of irrelevant noise.</li>
+                    </ul>
+                    <img src="images/inventory_DataPrep_1.jpg" class= "DataPrep-Step">
+                </li>
+
+                <li>2. Data extraction from OpenAI dataset:</i>
+                    <ul>
+                        <li>OpenAI responses were noisy with extraneous information. Hence, only the relevant information was extracted.</li>
+                    </ul>
+                    <img src="images/inventory_DataPrep_2.jpg" class= "DataPrep-Step">
+                </li>
+
+                <li>3. Generated unique product ID:</i>
+                    <ul>
+                        <li>In the absence of a designated ID for product SKUs in the raw dataset, the entire product information had to be replicated across all tables containing product data. To streamline this, SKU details from all raw tables were combined, and distinct IDs were created for each product SKU.</li>
+                    </ul>
+                    <img src="images/inventory_DataPrep_3.jpg" class= "DataPrep-Step">
+                </li>
+
+                <li>4. Formatted dates:</i>
+                    <ul>
+                        <li>All date entries were reformatted to the standard YYYY-MM-DD format.</li>
+                    </ul>
+                    <img src="images/inventory_DataPrep_4.jpg" class= "DataPrep-Step">
+                </li>
+
+                <li>5. Handled missing values:</i>
+                    <ul>
+                        <li>The OpenAI data contains a few missing records that were replaced with "Others" in "FlavorProfile" and "AlcoholType" column, and with Mean in "ABV".</li>
+                    </ul>
+                    <img src="images/inventory_DataPrep_5.jpg" class= "DataPrep-Step">
+                </li>
+
+                <li>6. Fixed data types</i>
+                    <ul>
+                        <li>All numeric ID columns were converted to object types.</li>
+                    </ul>
+                    <img src="images/inventory_DataPrep_6.jpg" class= "DataPrep-Step">
+                </li>
+
+                <li>7. Combined begin and ending inventory table</i>
+                    <ul>
+                        <li>Begining and endign inventory tables were merged to prevent redundancy.</li>
+                    </ul>
+                    <img src="images/inventory_DataPrep_7.jpg" class= "DataPrep-Step">
+                </li>
+
+                <li>8. Constructed dedicated info tables</i>
+                    <ul>
+                        <li>Built dedicated tables for product, vendor, and store details, aiming to minimize redundancy within other tables and decrease overall data size.</li>
+                    </ul>
+                    <img src="images/inventory_DataPrep_8.jpg" class= "DataPrep-Step">
+                </li>
+                <li>Download the raw data <a href="https://drive.google.com/drive/folders/12hFFq4K6cTLgKfDC16dSLArUha5ZEToV?usp=sharing" target="_blank">here</a></li>
+            </ul>
+            <br>
+
+        </div>
+    </div>
+
+    <div class="tab-contents" id="Data-Exploration-Content">
+        <div class="intro">
+            <h1 class="sub-title">Data Exploration</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            
+        </div>
+    </div>
+
+    <div class="tab-contents" id="Modeling-Content">
+        <div class="intro">
+            <h1 class="sub-title">Modeling</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="copyright" id="copyright">
+    <p>Copyright © Kevin. Made wtih <i class="fas fa-heart"></i> by <a href="https://www.youtube.com/channel/UCkjoHfkLEy7ZT4bA2myJ8xA?sub_confirmation=1">Easy Tutorials</a></p>
+</div>
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+<script>
+    const scriptURL = '< add you own link here >' // add your own app script link here
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>

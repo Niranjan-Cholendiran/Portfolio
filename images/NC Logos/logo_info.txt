@@ -1,0 +1,7 @@
+
+            Fonts used: NexaRustSlab-Black,Harman-Sans 
+
+            Colors used: 4CD4CB,020202  
+
+            Icon url: https://thenounproject.com/term/data-science/1875648  
+        
