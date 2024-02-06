@@ -33,6 +33,7 @@ body{
     font-family: "Times New Roman", Times, serif; /* Change font to Times New Roman */
     font-size: 18px;
     color: #c0c0c0;
+    text-align: justify;
 }
 .intro p span{
     font-family: "Times New Roman", Times, serif; /* Change font to Times New Roman */
@@ -107,8 +108,7 @@ body{
     margin: 0 auto;
 }
 
-/* -----------D--------------- */
-
+/* -----------Data Exploration--------------- */
 
 
 
@@ -171,10 +171,10 @@ nav ul li:hover .sub-menu-1{
     display: block;
     position: absolute;
     background: rgba(22, 22, 22, 0.7);
-    margin-top: 5px;
-    margin-left: -30px;
+    margin-top: 3px;
+    margin-left: -45px;
     align-items: center;
-    width: 130px;
+    width: 170px;
 }
 
 nav ul li:hover .sub-menu-1 li{
@@ -201,19 +201,25 @@ nav ul li:hover .sub-menu-1 ul li{
 .sub-menu-2-hover:hover .sub-menu-2{
     display: block;
     position: absolute;
-    margin-top: -30px;
-    margin-left: 118px;
+    margin-top: -40px;
+    margin-left: 155px;
     background: rgba(22, 22, 22, 0.7);
     width: 160px;
     align-items: end;
-    padding-left: -100px;
-    padding-right: -100px;
 }
 
 .sub-menu-2-hover:hover .sub-menu-2 li{
     margin-left: 3px;
     align-self: center;
 
+}
+
+.sub-menu-2-hover a{
+    font-size: 13px;
+}
+
+.sub-menu-2 li a{
+    font-size: 13px;
 }
 
 .sub-menu-3{
@@ -289,8 +295,8 @@ nav ul li:hover .sub-menu-1 ul li{
 
 .tab-titles{
     display: flex;
-    width: 80%;
-    margin: 4% 20% 3%;
+    width: 100%;
+    margin: 4% 12% 3%;
     align-content: center;
 
 }
@@ -411,6 +417,14 @@ nav ul li:hover .sub-menu-1 ul li{
 }
 
 /* ---------contact-------- */
+
+
+.social-media-icons ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+
 .contact-left{
     flex-basis: 35%;
 }

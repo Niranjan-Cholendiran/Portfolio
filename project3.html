@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niranjan's Portfolio</title>
+    <link rel="stylesheet" href="style_WIP.css">
+    <script src="https://kit.fontawesome.com/90171aec82.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+<div id="header">
+    <div class="container">
+        <nav>
+            <a href="index.html#header"><img src="images/logo.png" class="logo"></a>
+            <ul class="menu" id="sidemenu">
+                <li><a href="index.html#header">Home</a></li>
+                <li><a href="index.html#about">About Me</a></li>
+                <li><a href="index.html#projects">My Work</a>
+                    <li><a href="#projects">My Work</a>
+                        <div class="sub-menu-1"> 
+                            <ul>
+                                <li class="sub-menu-2-hover"><a href="project1.html#header">Inventory Optimization (CSCI 5622)</a>
+                                    <div class="sub-menu-2">
+                                        <ul>
+                                            <li><a href="project1.html#Introduction-Content">Introduction</a></li>
+                                            <li><a href="project1.html#navigation-content">DataPrep_EDA</a></li>
+                                            <li class="sub-menu-3-hover"><a href="project1.html#navigation-content">Modeling</a>
+                                                <div class="sub-menu-3">
+                                                    <ul>
+                                                        <li><a href="project1.html#navigation-content">Clustering</a></li>
+                                                        <li><a href="project1.html#navigation-content">ARM</a></li>
+                                                        <li><a href="project1.html#navigation-content">Naïve Bayes</a></li>
+                                                        <li><a href="project1.html#navigation-content">Decision Tree</a></li>
+                                                        <li><a href="project1.html#navigation-content">SVMs</a></li>
+                                                        <li><a href="project1.html#navigation-content">Regression</a></li>
+                                                        <li><a href="project1.html#navigation-content">Neural Nets</a></li>
+                                                    </ul>
+                                                </div>                                        
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="sub-menu-2-hover"><a href="project2.html#header">B2C Brand Perception (INFO 5871)</a>
+                                    <div class="sub-menu-2">
+                                        <ul>
+                                            <li><a href="project2.html#header">Introduction</a></li>
+                                            <li><a href="project2.html#header">Data Preparation</a></li>
+                                            <li><a href="project2.html#header">Data Exploration</a></li>
+                                            <li class="sub-menu-3-hover"><a href="#">Modeling</a>
+                                                <div class="sub-menu-3">
+                                                    <ul>
+                                                        <li><a href="project2.html#header">Clustering</a></li>
+                                                        <li><a href="project2.html#header">ARM</a></li>
+                                                        <li><a href="project2.html#header">Naïve Bayes</a></li>
+                                                        <li><a href="project2.html#header">Decision Tree</a></li>
+                                                        <li><a href="project2.html#header">SVMs</a></li>
+                                                        <li><a href="project2.html#header">Regression</a></li>
+                                                        <li><a href="project2.html#header">Neural Nets</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="sub-menu-2-hover"><a href="project3.html#header">Dock Watch (CSCI 5502)</a>
+                                    <div class="sub-menu-2">
+                                        <ul>
+                                            <li><a href="project3.html#header">Introduction</a></li>
+                                            <li><a href="project3.html#header">Data Preparation</a></li>
+                                            <li><a href="project3.html#header">Data Exploration</a></li>
+                                            <li class="sub-menu-3-hover"><a href="project3.html#header">Modeling</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>                
+                    </li>                
+                </li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        
+    </div>
+</div>
+
+<!-- -----------Project Contents---------- -->
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+
+</body>
+</html>

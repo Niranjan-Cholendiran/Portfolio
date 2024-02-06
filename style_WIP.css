@@ -14,15 +14,109 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(images/background.png);
-    background-size: 50%;
-    background-position: 95%;
+    background-image: url(images/B2C_Background.jpg);
+    
+    background-position: 60%;
+    background-position-x: center;
+    background-position-y: 80%;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    opacity: 1;
 }
 .container{
-    padding: 10px 10%;
+    padding: 10px 10%; 
 }
+
+/* -----------Intro--------------- */
+
+.intro p {
+    font-family: "Times New Roman", Times, serif; /* Change font to Times New Roman */
+    font-size: 18px;
+    color: #c0c0c0;
+    text-align: justify;
+}
+.intro p span{
+    font-family: "Times New Roman", Times, serif; /* Change font to Times New Roman */
+    font-size: 18px;
+    color: #61b752;
+}
+
+.intro-quote {
+    align-items: center;
+    max-width: 50%; /* Ensure the image doesn't exceed its container */
+    height: auto;
+    display: block; /* Ensure the image behaves as a block element */
+    margin: 0 auto;
+}
+
+/* -----------Data Preparation--------------- */
+.intro h3 {
+    text-align: center; /* Center-align the text */
+    color: #61b752
+}
+
+.intro p b{
+    font-family: "Times New Roman", Times, serif; /* Change font to Times New Roman */
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.intro p a{
+    font-family: "Times New Roman", Times, serif; /* Change font to Times New Roman */
+    font-size: 18px;
+}
+
+.intro ul {
+    color: #c0c0c0;
+    padding-left: 40px; /* Add left padding to create space after a tab */
+}
+
+.intro ol {
+    color: #c0c0c0;
+    padding-left: 40px; /* Add left padding to create space after a tab */
+}
+
+.intro ol li{
+    font-family: "Times New Roman", Times, serif; /* Change font to Times New Roman */
+    font-size: 18px;
+    color: #c0c0c0;
+}
+
+.intro ol li b{
+    font-family: "Times New Roman", Times, serif; /* Change font to Times New Roman */
+    font-size: 18px;
+    color: white;
+    font-weight: bold
+}
+
+.intro ul ul{
+    color: #c0c0c0;
+    padding-left: 80px; /* Add left padding to create space after a tab */
+}
+
+.intro ul ul li{
+    color: #c0c0c0;
+    list-style-type: circle
+}
+
+.DataPrep-Step {
+    align-items: center;
+    max-width: 60%; /* Ensure the image doesn't exceed its container */
+    height: auto;
+    display: block; /* Ensure the image behaves as a block element */
+    margin: 0 auto;
+}
+
+/* -----------Data Exploration--------------- */
+
+
+
+
+
+
+
+
 
 
 
@@ -47,7 +141,6 @@ nav ul li a{
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-    text-align: justify;
     position: relative;
 }
 
@@ -65,8 +158,12 @@ nav ul li a:hover::after{
     width: 100%;
 }
 
+.menu{
+    background: rgba(22, 22, 22, 0.7);
+}
+
 .sub-menu-1{
-    display: none;   
+    display: none;
     
 }
 
@@ -78,7 +175,6 @@ nav ul li:hover .sub-menu-1{
     margin-left: -45px;
     align-items: center;
     width: 170px;
-    
 }
 
 nav ul li:hover .sub-menu-1 li{
@@ -138,22 +234,34 @@ nav ul li:hover .sub-menu-1 ul li{
     background: rgba(22, 22, 22, 0.7);
     width: 120px;
 }
+
 .header-text{
     margin-top: 15%;
     font-size: 30px;
-    text-align: justify;
+    align-self: center;
 }
 .header-text h1{
-    font-size: 60px;
-    text-align: justify;
-    margin-top: 20px;
+    font-size: 80px;
+    text-align: center;    
+    color: #ffffff;
+    background-color: rgba(22, 22, 22, 0.2);
 }
+
+.image-credit {
+    font-size: 10px;
+    padding-left: 1120px;
+    padding-top: 260px;
+    
+}
+
+.image-credit a{
+    color: #979897;
+}
+
+
 .header-text h1 span{
     color: #ff004f;
 }
-
-
-
 /* -----------about--------------- */
 #about{
     padding: 80px 0;
@@ -165,38 +273,42 @@ nav ul li:hover .sub-menu-1 ul li{
     flex-wrap: wrap;
 }
 
-.about-col-1{
-    flex-basis: 35%;
-}
-.about-col-1 img{
+.intro{
+    flex-basis: 100%;
     width: 100%;
-    border-radius: 15px;
+    padding-top: 4%;
 }
-.about-col-2{
-    flex-basis: 60%;
+
+.intro p{
+    padding-top: 0%;
 }
+
 
 .sub-title{
     font-size: 60px;
-    text-align: justify;
     font-weight: 600;
     color: #fff;
+    text-align: center;
 }
 
 
 
 .tab-titles{
     display: flex;
-    margin: 20px 0 40px;
+    width: 80%;
+    margin: 4% 20% 3%;
+    align-content: center;
+
 }
+
 .tab-links{
-    margin-right: 50px;
+    margin-right: 100px;
     font-size: 18px;
-    text-align: justify;
     font-weight: 500;
     cursor: pointer;
     position: relative;
 }
+
 .tab-links::after{
     content: '';
     width: 0;
@@ -219,7 +331,6 @@ nav ul li:hover .sub-menu-1 ul li{
 .tab-contents ul li span{
     color: #b54769;
     font-size: 14px;
-    text-align: justify;
 }
 .tab-contents{
     display: none;
@@ -266,7 +377,6 @@ nav ul li:hover .sub-menu-1 ul li{
     padding: 0 40px;
     text-align: center;
     font-size: 14px;
-    text-align: justify;
    transition: height 0.5s;
 }
 .layer h3{
@@ -278,7 +388,6 @@ nav ul li:hover .sub-menu-1 ul li{
     color: #ff004f;
     text-decoration: none;
     font-size: 18px;
-    text-align: justify;
     line-height: 60px;
     background: #fff;
     width: 60px;
@@ -308,20 +417,6 @@ nav ul li:hover .sub-menu-1 ul li{
 }
 
 /* ---------contact-------- */
-
-.social-media-icons ul li{
-    width: 5%;
-    list-style: none;
-    display: inline;
-    margin: 10px 30px;
-    padding: 30px 50px;
-    align-items: center;
-}
-
-.social-media-icons ul li img{
-    width: 5%;
-} 
-
 .contact-left{
     flex-basis: 35%;
 }
@@ -335,7 +430,6 @@ nav ul li:hover .sub-menu-1 ul li{
     color: #ff004f;
     margin-right: 15px;
     font-size: 25px;
-    text-align: justify;
 }
 .social-icons{
     margin-top: 30px;
@@ -343,7 +437,6 @@ nav ul li:hover .sub-menu-1 ul li{
 .social-icons a{
     text-decoration: none;
     font-size: 30px;
-    text-align: justify;
     margin-right: 15px;
     color: #ababab;
     display: inline-block;
@@ -369,13 +462,11 @@ form input, form textarea{
     margin: 15px 0;
     color: #fff;
     font-size: 18px;
-    text-align: justify;
     border-radius: 6px;
 }
 form .btn2{
     padding: 14px 60px;
     font-size: 18px;
-    text-align: justify;
     margin-top: 20px;
     cursor: pointer;
 }
@@ -395,30 +486,24 @@ form .btn2{
     text-decoration: none;
 }
 /* -----------------css for small screens--------- */
-
 nav .fas{
     display: none;
 }
 
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(images/background.png);
-        background-size: 100%;
-        background-position: 40px 200px;
+        background-image: url(images/phone-background.png);
     }
     .header-text{
-        margin-top: 10%;
+        margin-top: 100%;
         font-size: 16px;
-        text-align: justify;
     }
     .header-text h1{
-        font-size: 27px;
-        text-align: justify;
+        font-size: 30px;
     }
     nav .fas{
         display: block;
         font-size: 25px;
-        text-align: justify;
     }
     nav ul{
         background: #ff004f;
@@ -441,52 +526,28 @@ nav .fas{
         left: 25px;
         cursor: pointer;
     }
-
-   
     .sub-title{
         font-size: 40px;
-        text-align: justify;
     }
-    .about-col-1, .about-col-2{
+    .about-col-1, .intro{
         flex-basis: 100%;
     }
     .about-col-1{
         margin-bottom: 30px;
     }
-    .about-col-2{
+    .intro{
         font-size: 14px;
-        text-align: justify;
     }
     .tab-links{
         font-size: 16px;
         margin-right: 20px;
-        text-align: justify;
     }
     .contact-left, .contact-right{
         flex-basis: 100%;
     }
     .copyright{
         font-size: 14px;
-        text-align: justify;
     }
-
-    .social-media-icons ul li img{
-        width: 22%;
-        list-style: none;
-        display: inline;
-    } 
-    .social-media-icons ul li{
-        list-style: none;
-        display: inline;
-    } 
-    .social-media-icons ul{
-        list-style: none;
-        display: inline;
-    } 
-    .social-media-icons ul li a{
-        list-style: none;
-        display: inline;
-    } 
 }
 #msg{
     color: #61b752;

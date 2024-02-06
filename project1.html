@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niranjan's Portfolio</title>
     <link rel="stylesheet" href="style_project.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+
     <script src="https://kit.fontawesome.com/90171aec82.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -19,12 +21,11 @@
                 <li><a href="index.html#projects">My Work</a>
                     <div class="sub-menu-1"> 
                         <ul>
-                            <li class="sub-menu-2-hover"><a href="project1.html#header">Project Title 1</a>
+                            <li class="sub-menu-2-hover"><a href="project1.html#header">Inventory Optimization (CSCI 5622)</a>
                                 <div class="sub-menu-2">
                                     <ul>
                                         <li><a href="#Introduction-Content" onclick="opentab('Introduction-Content')">Introduction</a></li>
-                                        <li><a href="#Data-Preparation-Content" onclick="opentab('Data-Preparation-Content')">Data Preparation</a></li>
-                                        <li><a href="#Data-Exploration-Content" onclick="opentab('Data-Exploration-Content')">Data Exploration</a></li>
+                                        <li><a href="#Data-Preparation-Content" onclick="opentab('Data-Preparation-Content')">DataPrep_EDA</a></li>
                                         <li class="sub-menu-3-hover"><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Modeling</a>
                                             <div class="sub-menu-3">
                                                 <ul>
@@ -41,7 +42,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="sub-menu-2-hover"><a href="#">Project Title 2</a>
+                            <li class="sub-menu-2-hover"><a href="project2.html#header">B2C Brand Perception (INFO 5871)</a>
                                 <div class="sub-menu-2">
                                     <ul>
                                         <li><a href="#">Introduction</a></li>
@@ -63,7 +64,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="sub-menu-2-hover"><a href="#">Project Title 3</a>
+                            <li class="sub-menu-2-hover"><a href="project3.html#header">Dock Watch (CSCI 5502)</a>
                                 <div class="sub-menu-2">
                                     <ul>
                                         <li><a href="#">Introduction</a></li>
@@ -91,24 +92,42 @@
 
 <!-- -----------Project Contents---------- -->
 
-<div class="container">
-    <div class="tab-titles">
+<div class="container" id="navigation-content">
+    <div class="tab-titles" >
         <p class="tab-links active-link" onclick="opentab('Introduction-Content')">Introduction</p>
-        <p class="tab-links" onclick="opentab('Data-Preparation-Content')">Data Preparation</p>
-        <p class="tab-links" onclick="opentab('Data-Exploration-Content')">Data Exploration</p>
+        <p class="tab-links" onclick="opentab('Data-Preparation-Content')">Data Collection & Preparation</p>
+        <p class="tab-links" onclick="opentab('Data-Exploration-Content')">Data Exploration (EDA)</p>
         <p class="tab-links" onclick="opentab('Modeling-Content')">Modeling</p>
     </div>
 
     <div class="tab-contents active-tab" id="Introduction-Content">
         <div class="intro">
             <h1 class="sub-title">Introduction</h1>
-            <p>Have you ever experienced the frustration of finding your favourite product out of stock just when you're ready to make a purchase? Well, it's not just a letdown for you but also a significant loss for retailers. In 2018, retailers lost out on $300 million in revenue due to poor inventory management, and that was before the pandemic. Pre-pandemic, the odds of shoppers seeing an out-of-stock message were 1 in 200. That figure rose to 1 in 59 in 2022, a 235% increase. In a survey, almost half of respondents (46%) indicated that overbuying inventory and buying the wrong type of products are top contributing factors to markdowns.</p>
+            <br><br>
+            <p>Have you ever experienced the frustration of finding your favourite product out of stock just when you're ready to make a purchase? Well, it's not just a letdown for you but also a significant loss for the retailers. In 2018, retailers lost out on $300 million in revenue due to poor inventory management, and that was before the pandemic. Pre-pandemic, the odds of shoppers seeing an out-of-stock message were 1 in 200. That figure rose to 1 in 59 in 2022, a 235% increase (<a href="https://www.retailbrew.com/stories/2023/04/25/why-inventory-management-is-important-for-retailers" target="_blank">source</a>). In a survey, almost half of respondents (46%) indicated that overbuying inventory and buying the wrong type of products are top contributing factors to markdowns(<a href="https://www.mytotalretail.com/article/hidden-costs-of-poor-inventory-management/" target="_blank">source</a>).</p>
             <br>
             <img src="images/inventrory_intro_quote.jpg" class= "intro-quote">
+            <br>
             <p>This results in dissatisfied customers, decreased profits, high holding costs, expired inventory, and inevitable write-offs. But, who bears the responsibility for this inventory mismanagement? Products don't magically appear on shelves, right? They go through a complex distribution process involving multiple middlemen. In a typical One Level Channel distribution, the retailer stands between the manufacturer and the customer, serving as the crucial link responsible for managing inventory to meet customer demand and maximize profit.</p>
             <br>
             <img src="images/inventrory_one_level_distribution.png" class= "intro-quote">
-            <p>Yet, managing inventory is far from simple. It presents countless challenges, including poor demand forecasting, the impact of seasonality and trends, delays in purchasing, limitations in production capacity, delayed fulfilment, and more. Therefore, every retailer must implement a <span>framework to optimize inventory management by identifying the ideal time for purchases</span> to minimize overstocking or stockouts while maximizing revenue.</p>
+            <br>
+            <p>Yet, managing inventory is far from simple. It presents countless challenges, including poor demand forecasting, the impact of seasonality and trends, delays in purchasing, limitations in production capacity, delayed fulfilment, and more. Therefore, every retailer must implement a <span>framework to optimize inventory management by identifying the ideal time for purchases</span> to minimize overstocking or stockouts while maximizing revenue. The framework must be capable of answering the following questions:</p>
+            <br>
+            <ol style="padding-left: 80px;">
+                <li>What product categories are in the highest demand?</li>
+                <li>Which factors influence demand?</li>
+                <li>What quantities of fast, slow and non-moving products are available in the inventory?</li>
+                <li>What quantities of high and low profitable products are available in the inventory?</li>
+                <li>What is the store’s average inventory replacement rate (or Inventory turnover rate), and how does it vary across product categories?</li>
+                <li>Which vendors are reliable and have shorter fulfilment times?</li>
+                <li>What is the fulfilment capacity of vendors?</li>
+                <li>What are the associated purchase costs for each order?</li>
+                <li>How level of demand can be expected in the upcoming days?</li>
+                <li>Are there any emerging trends or consumer preferences that may impact future demand patterns?</li>
+            </ol>
+            <br>
+            <p>A very few companies have achieved excellence in optimizing their inventory. For instance, Companies like Amazon, Walmart, and Coca-Cola have successfully implemented predictive analytics in their inventory management systems, resulting in significant cost savings and improved operational efficiency. Particularly, Amazon uses predictive analytics to manage its vast inventory effectively. By analyzing customer buying behaviour, Amazon can predict product demand with a high degree of accuracy and adjust its inventory levels accordingly. This has helped Amazon reduce its inventory holding costs and improve customer satisfaction (<a href="https://www.brisklogic.co/the-predictive-analytics-in-inventory-management/" target="_blank">source</a>).</p>
         </div>
     </div>
 
@@ -181,7 +200,7 @@
                 </ul>
             </ul>
             <img src="images/inventory_api_components.jpg" class= "intro-quote">
-            <p>Find the code here [Link to code]</p>
+            <p>Download the full API code <a href="https://github.com/Niranjan-Cholendiran/Inventory-Optimization-WIP-/blob/main/Data%20Collection/02.%20OpenAI%20Product%20Info%20Data%20Collection.ipynb" target="_blank">here</a></p>
 
             <br><br>
             <h1 class="sub-title">Data Preparation</h1>
@@ -190,7 +209,7 @@
             <br>
                 <div style="text-align: center;">
                     <iframe width="1000" height="500" src='https://dbdiagram.io/e/65bd8a35ac844320ae58ac4d/65c03f39ac844320ae6d38b2'> </iframe>
-                    <p><i>Note: Hover through the ERD diagram to highlight relationships and read description.</i></p>
+                    <p style="text-align:center;"><i style="font-size: 14px;">Note: Hover through the ERD diagram to highlight relationships and read description.</i></p>
                 </div>
             <br>
             <p>These analytical tables are high-quality, clean datasets compiled from both sources and are ready for direct utilization in analytical tasks. Note that these datasets are non-aggregated tables that can be seamlessly combined as per requirements.</p>
@@ -252,7 +271,7 @@
                     </ul>
                     <img src="images/inventory_DataPrep_8.jpg" class= "DataPrep-Step">
                 </li>
-                <li>Download the raw data <a href="https://drive.google.com/drive/folders/12hFFq4K6cTLgKfDC16dSLArUha5ZEToV?usp=sharing" target="_blank">here</a></li>
+                <p>Download the data preprataion code <a href="https://github.com/Niranjan-Cholendiran/Inventory-Optimization-WIP-/blob/main/Data%20Preparation/01.%20Analytical%20Base%20Tables%20Preparation.ipynb" target="_blank">here</a></p>
             </ul>
             <br>
 
@@ -262,22 +281,112 @@
     <div class="tab-contents" id="Data-Exploration-Content">
         <div class="intro">
             <h1 class="sub-title">Data Exploration</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <br><br>
+            <p>Find insights from the data that are crucial to optimize the inventory below:</p>
+            <br><br>
+            <ul style="padding-left: 10px;"">
+
+                <li><h4 style="color: #61b752; font-weight: bold;">1. Store, product, and vendors volume:</h4></i>
+                    <br>
+                    <ul>
+                        <img src="images/EDA_01.JPG" class= "DataPrep-Step">
+                        <li>Sales and purchase data cover the entire year of 2016.</li>
+                        <li>The dataset includes information from 80 stores, 132 vendors, 11K brands, and 11K products.</li>
+                    </ul>
+                </li>
+                <br>
+
+                <li><h4 style="color: #61b752; font-weight: bold;">2. Sampling:</h4></i>
+                    <br>
+                    <ul>
+                        <img src="images/EDA_02.JPG" class= "DataPrep-Step" style="max-width: 90%;">
+                        <li>For this project, the sample is taken as Store 51, which ranks close to median in the:</li>
+                        <ul>
+                            <li>Quantity sold (Rank 40)</li>
+                            <li>Total sales value (Rank 40)</li>
+                            <li>Number of unique products sold (53)</li>
+                            <li>Number of unique days sales occurred (Nearly every day)</li>
+                        </ul>
+                    </ul>
+                </li>
+                <br>
+
+                <li><h4 style="color: #61b752; font-weight: bold;">3. Store ID 51’s sales and purchase summary:</h4></i>
+                    <br>
+                    <ul>
+                        <img src="images/EDA_03.JPG" class= "DataPrep-Step" style="max-width: 90%;">
+                        <li>The store has purchased around 2K unique products from 73 vendors.</li>
+                        <li>Purchases and sales exceeded 300K products.</li>
+                        <li>Highest demand was observed in Q4 of 2016.</li>
+                    </ul>
+                </li>
+                <br>
+
+
+                <li><h4 style="color: #61b752; font-weight: bold;">4. Which category of liquors dominated the store’s inventory?</h4></i>
+                    <br>
+                    <ul>
+                        <img src="images/EDA_04.JPG" class= "DataPrep-Step" style="max-width: 90%;">
+                        <li>Fruity-flavored liquors and wine alcoholic types were prevalent in the inventory.</li>
+                        <li>Gin had the highest average level of alcohol volume, while Vodka had the highest ABV variance.</li>
+                    </ul>
+                </li>
+                <br>
+
+                <li><h4 style="color: #61b752; font-weight: bold;">5. Which category of liquors had a higher price per product and was more profitable?</h4></i>
+                    <br>
+                    <ul>
+                        <img src="images/EDA_05.JPG" class= "DataPrep-Step" style="max-width: 90%;">
+                        <li>Floral flavoured drinks were the most expensive (385% above overall average) and profitable (317% above overall average).</li>
+                        <li>Whiskeys were the most expensive (55% above overall average) and profitable (33% above overall average) alcoholic type.</li>
+                    </ul>
+                </li>
+                <br>
+
+                <li><h4 style="color: #61b752; font-weight: bold;">6. Which category of liquors had higher demand and generated greater profits?</h4></i>
+                    <br>
+                    <ul>
+                        <img src="images/EDA_06.JPG" class= "DataPrep-Step" style="max-width: 90%;">
+                        <li>Despite Floral flavour and Whiskeys having the highest margin per product, Fruity flavor and Wines generated more profit fuelled by their high demand.</li>
+                    </ul>
+                </li>
+                <br>
+
+                <li><h4 style="color: #61b752; font-weight: bold;">7. Which category of liquors were purchased more from the vendors?</h4></i>
+                    <br>
+                    <ul>
+                        <img src="images/EDA_07.JPG" class= "DataPrep-Step" style="max-width: 90%;">
+                        <li>To meet demand, Fruity flavor and Wines were the top choices for purchase.</li>
+                    </ul>
+                </li>
+                <br>
+
+                <li><h4 style="color: #61b752; font-weight: bold;">8. How long does the vendors take to fulfil the order?</h4></i>
+                    <br>
+                    <ul>
+                        <img src="images/EDA_08.JPG" class= "DataPrep-Step" style="max-width: 90%;">
+                        <li>Vendors typically take around 8 days to deliver the products, with some vendors managing delivery times as low as 4 days.</li>
+                    </ul>
+                </li>
+                <br>
+                
+                <li>The above visualizations were built using <a href="https://www.microsoft.com/en-us/power-platform/products/power-bi" target="_blank">Microsoft Power BI</a></li>
+            </ul>
             
+            <br>
         </div>
     </div>
 
     <div class="tab-contents" id="Modeling-Content">
         <div class="intro">
             <h1 class="sub-title">Modeling</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <br><br>
+            <p style="color: red; text-align: center; font-size: 25px;">This section is a work in progress! Please check back soon...</p>
         </div>
     </div>
-
 </div>
 
 <div class="copyright" id="copyright">
-    <p>Copyright © Kevin. Made wtih <i class="fas fa-heart"></i> by <a href="https://www.youtube.com/channel/UCkjoHfkLEy7ZT4bA2myJ8xA?sub_confirmation=1">Easy Tutorials</a></p>
 </div>
 
 
