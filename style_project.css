@@ -419,10 +419,6 @@ nav ul li:hover .sub-menu-1 ul li{
 /* ---------contact-------- */
 
 
-.social-media-icons ul li{
-    list-style: none;
-    display: inline-block;
-}
 
 
 .contact-left{
@@ -500,14 +496,22 @@ nav .fas{
 
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(images/phone-background.png);
+        background-image: url(images/inventory_background_phone.jpg);
+        background-size: 130%;
+        size: 10px;
     }
     .header-text{
-        margin-top: 100%;
-        font-size: 16px;
+        margin-top: 50%;
+        font-size: 1px;
     }
     .header-text h1{
         font-size: 30px;
+    }
+    .image-credit {
+        font-size: 0px;
+        padding-left: 0px;
+        padding-top: 0px;
+        
     }
     nav .fas{
         display: block;
@@ -555,6 +559,12 @@ nav .fas{
     }
     .copyright{
         font-size: 14px;
+    }
+    .tab-titles{
+        display: flex;
+        width: 40%;
+        margin: 0% 0% 0%;
+        align-content: center;
     }
 }
 #msg{
