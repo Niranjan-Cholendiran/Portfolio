@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niranjan's Portfolio</title>
-    <link rel="stylesheet" href="style_WIP.css">
+    <link rel="stylesheet" href="style_project_2.css">
     <script src="https://kit.fontawesome.com/90171aec82.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -45,19 +45,19 @@
                                 <li class="sub-menu-2-hover"><a href="project2.html#header">B2C Brand Perception (INFO 5871)</a>
                                     <div class="sub-menu-2">
                                         <ul>
-                                            <li><a href="project2.html#header">Introduction</a></li>
-                                            <li><a href="project2.html#header">Data Preparation</a></li>
-                                            <li><a href="project2.html#header">Data Exploration</a></li>
+                                            <li><a href="project2.html#Introduction-Content">Introduction</a></li>
+                                            <li><a href="project2.html#navigation-content">Data</a></li>
+                                            <li><a href="project2.html#navigation-content">Data Exploration</a></li>
                                             <li class="sub-menu-3-hover"><a href="#">Modeling</a>
                                                 <div class="sub-menu-3">
                                                     <ul>
-                                                        <li><a href="project2.html#header">Clustering</a></li>
-                                                        <li><a href="project2.html#header">ARM</a></li>
-                                                        <li><a href="project2.html#header">Naïve Bayes</a></li>
-                                                        <li><a href="project2.html#header">Decision Tree</a></li>
-                                                        <li><a href="project2.html#header">SVMs</a></li>
-                                                        <li><a href="project2.html#header">Regression</a></li>
-                                                        <li><a href="project2.html#header">Neural Nets</a></li>
+                                                        <li><a href="project2.html#navigation-content">Clustering</a></li>
+                                                        <li><a href="project2.html#navigation-content">ARM</a></li>
+                                                        <li><a href="project2.html#navigation-content">Naïve Bayes</a></li>
+                                                        <li><a href="project2.html#navigation-content">Decision Tree</a></li>
+                                                        <li><a href="project2.html#navigation-content">SVMs</a></li>
+                                                        <li><a href="project2.html#navigation-content">Regression</a></li>
+                                                        <li><a href="project2.html#navigation-content">Neural Nets</a></li>
                                                     </ul>
                                                 </div>
                                             </li>
@@ -83,12 +83,227 @@
             </ul>
             <i class="fas fa-bars" onclick="openmenu()"></i>
         </nav>
-        
+        <div class="header-text" style="padding-top: 3%;">
+            <h1>B2C Brand Perception Analysis</h1>
+        </div>
+        <div class="image-credit"><a href="https://www.freepik.com/free-ai-image/diminishing-perspective-old-archive-shelves-glow-generated-by-ai_41283910.htm#query=inventory&position=41&from_view=search&track=sph&uuid=b9640a9c-497c-4233-b6ad-bb5a98163567">Image By vecstock</a>
+        </div>
     </div>
 </div>
 
 <!-- -----------Project Contents---------- -->
+<div class="container" id="navigation-content">
+    <div class="tab-titles" >
+        <p class="tab-links active-link" onclick="opentab('Introduction-Content')">Introduction</p>
+        <p class="tab-links" onclick="opentab('Data-Preparation-Content')">Data Collection & Preparation</p>
+        <p class="tab-links" onclick="opentab('Data-Exploration-Content')">Data Exploration (EDA)</p>
+        <p class="tab-links" onclick="opentab('Modeling-Content')">Modeling</p>
+    </div>
 
+    <div class="tab-contents active-tab" id="Introduction-Content">
+        <div class="intro">
+            <h1 class="sub-title">Introduction</h1>
+            <br><br>
+            <p>On an average, a company allocates approximately 9.1% of its revenue to marketing (<a href="https://vitaldesign.com/percent-of-revenue-spent-on-marketing-sales/#:~:text=Businesses%20large%20and%20small%20understand,12.1%25%20across%20industries%20in%202016." target="_blank">source</a>), with a significant portion directed towards campaign planning & content creation (40-50%), paid advertising (20-30%), and the rest on workforce marketing and events. (<a href="https://business.adobe.com/blog/basics/a-high-level-b2b-marketing-budget-breakdown" target="_blank">source</a>). But what is the purpose of investing not only so much money, but also a lot of time and effort, into marketing?</p>
+            <br>
+            <p>The current market is vast, and regardless of the industry, every company faces thousands of competitors. In such an era, it is crucial to stay ahead and build a good perception among consumers in order to succeed. One of the best ways to understand the importance of brand perception is through McKinsey’s Consumer Decision Journey chart:</p>
+            <br>
+            <img src="images/b2c_intro1.png" class= "intro-quote">
+            <br>
+            <P>This chart clearly shows the decision cycle of a consumer starting from the consideration to brand advocacy. While each state is crucial, the Evaluation and Advocacy stage plays an upper hand:</P>
+            <br>
+            <ul>
+                <li style="list-style: circle;">Evaluation stage is when consumers research to make an informed decision. Where they collect information from their own, ask friends, read public opinions, etc and make a final decision to engage further or not.</li>
+                <li style="list-style: circle;">Advocacy stage is when a consumer gets into the loyalty loop and advocate for the brand’s services/ products.</li>
+            </ul>
+            <br>
+            <p>These 2 stages play an important role in a company’s success, retaining existing customers and gaining new customers as word of mouth is the most powerful source for any customer. Therefore, significant marketing efforts has been put globally to ensure a brand has a loyal set of customers advocating for it.</p>
+            <br>
+            <img src="images/b2c_intro2.png" class= "intro-quote">
+            <br>
+            <p>Now that we know it is important, we can also realize that it is importance of measuring a brand’s perception, right? But the question is how?</p>
+            <br>
+            <p>In the past, measuring brand perception was challenging and required a lot of manual investigation. However, in today’s digital age, where customers opinions are readily available all over the internet. It is easy to find both sided perspective about a any brand online. So, if one can harness the power of these opinions by building a framework capable of collecting data about a brand across the web, analysing them and providing insights on to the area of improvement, it’d be a success for the company to measure it’s customer perception and tailor their marketing strategies according.</p>
+            <br>
+            <p>However, it's important to note that most consumers tend to write reviews when they are dissatisfied. Therefore, there’s a high possibility that the data collected from the online sites may not represents both sides equally. Nevertheless, the primary goal remains understanding the customer's point of view and identifying opportunities for improvement, making the skewed data less significant.</p>
+            <br>
+            <p>Ultimately, this framework can be used to measure:</p>
+            <ul>
+                <li style="list-style: circle;">Brand's reach based on number of reviews.</li>
+                <li style="list-style: circle;">Brand's perception through customer review sentiment.</li>
+                <li style="list-style: circle;">Brand's perception across various categories such as quality, customer support, shipping, returns, service, value for money, etc.</li>
+                <li style="list-style: circle;">Brand perception shift over time, especially after a major marketing campaign or decision.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tab-contents" id="Data-Preparation-Content">
+        <div class="intro">
+            <h1 class="sub-title">Data Collection</h1>
+            <br><br>
+            <p>Though the goal is to build a dynamic framework capable of analyzing the brand perception of any chosen company. To construct and validate this framework, an initial sample dataset has been compiled from various sources. The chosen sample is a well-recognized ride-hailing service company, "<b>Uber</b>" and the collected data is a combination of customer reviews, recent news articles, and Reddit posts. Find more information regarding the data collection process below. </p>
+            <br><br>
+
+            <h3>Source 1: Trustpilot</h3>
+            <br><br>
+            <p>Trustpilot is a free public review platform featuring diverse reviews from customers. Data from Trustpilot were <b>web scrapped using the Beautiful Soup python library</b>. In addition to customer reviews, the following information were also scrapped from the website to ensure the analysis be presented across multiple dimensions:</p>
+            <br>
+            <ol>
+                <li>Reviewer Name</li>
+                <li>Reviewer Total Reviews</li>
+                <li>Location</li>
+                <li>Review Star Rating</li>
+                <li>Review Title</li>
+                <li>Review</li>
+                <li>Date</li>
+                <li>Review Likes</li>
+            </ol>
+            <img src="images/b2c_source1.png" style="max-width: 90%; align-items:center; height: auto;margin: 0 auto; display: block; " >
+            <br>
+            <p>Find the data collection code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/01_Data_Collection/01_TrustPilot_WebScrape.ipynb" target="_blank">here</a></p>
+            <p>Download the raw data <a href="https://drive.google.com/drive/folders/1ePnv1q3zAfQiU-iUNK3ku6prUV0-J5Kl?usp=sharing" target="_blank">here</a></p>
+            <br>
+
+
+            
+            <h3>Source 2: NewsAPI</h3>
+            <br><br>
+            <p>While customer reviews offer a great source to measure brand perception. It is also crucial to keep track of public news, especially the popular ones, to analyse the current pulse of market and potential areas of improvement. Hence, NewsAPI were used to collect recent popular news articles tagged on the company “Uber”. The data were collected on the following topics individually:</p>
+            <br>
+            <ol>
+                <li>Customer Service</li>
+                <li>Safety</li>
+                <li>Promotions</li>
+                <li>Pricing</li>
+            </ol>
+            
+            <br>
+            <h4>API Components:</h4>
+            <br>
+            <ul>
+                <li>1. Endpoint: <i>https://newsapi.org/v2/everything</i></li>
+                <li>2. Parameters:</li>
+                <ul>
+                    <li>q: <i>uber%20NOT%20eats%20AND%20[topic]</i></li>
+                    <li>language: <i>en</i></li>
+                    <li>apiKey: <i>[API KEY]</i></li>
+                    <li>sortby: <i>popularity</i></li>
+                </ul>
+            </ul>
+            <img src="images/b2c_source2.png" style="max-width: 90%; align-items:center; height: auto;margin: 0 auto; display: block; " >
+            <br>
+            <p>Find the data collection code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/01_Data_Collection/02_NewsAPI_Data_Collection.ipynb" target="_blank">here</a></p>
+            <p>Download the raw data <a href="https://drive.google.com/drive/folders/1ePnv1q3zAfQiU-iUNK3ku6prUV0-J5Kl?usp=sharing" target="_blank">here</a></p>
+            <br>
+
+            <h3>Source 3: Reddit</h3>
+            <br><br>
+            <p>In addition to customer reviews and news articles, social network contents from Reddit was also collected to monitor the company’s campaigns and promotions- which could potentially influence and shift customers perception. Reddit API were used for this purpose.</p>
+            <br>
+            <h4>API Components:</h4>
+            <br>
+            <ul>
+                <li>1. Endpoint: <i>https://oauth.reddit.com/r/[subreddit]/new</i></li>
+                <li>2. Parameters:</li>
+                <ul>
+                    <li>subreddit: <i>Uber</i></li>
+                    <li>g: <i>en</i></li>
+                    <li>authentication: <i>[AUTHENTICATION TOKEN]</i></li>
+                    <li>sortby: <i>popularity</i></li>
+                </ul>
+            </ul>
+            <img src="images/b2c_source3.png" style="max-width: 90%; align-items:center; height: auto;margin: 0 auto; display: block; " >
+            <br>
+            <p>Find the data collection code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/01_Data_Collection/03_Reddit_Auth_and_Data_Collection.ipynb" target="_blank">here</a></p>
+            <p>Download the raw data <a href="https://drive.google.com/drive/folders/1ePnv1q3zAfQiU-iUNK3ku6prUV0-J5Kl?usp=sharing" target="_blank">here</a></p>
+
+
+
+            <br><br>
+            <h1 class="sub-title">Data Preparation</h1>
+            <br><br>
+            <p>The collected raw data contains a combination of text, categorical and numerical features. However, it cannot be used directly for analysis, especially the text data. Hence, the data has been pre-processed in a was that can be used for modeling. The following are a few data cleaning steps performed on the raw data.</b></p>
+            <br>
+                
+            <h4>Data Preparation Steps:</h4>
+            <ul>
+                <li>1. Unique identifier creation:</i>
+                    <ul>
+                        <li>Every review was tagged to an unique ID to ensure traceability throughout the analysis.</li>
+                    </ul>
+                    <img src="images/b2c_dataprep1.png" style="max-width: 90%; align-items:center; height: auto;margin: 0 auto; display: block; " >
+                </li>
+                <br>
+
+                <li>2. Filtering:</i>
+                    <ul>
+                        <li>The dataset includes reviews from around the world dating back over 10 years. To focus on recent feedback and ensure relevance, the data is filtered out for the last 3 years from the United States.</li>
+                    </ul>
+                </li>
+                <br>
+
+                <li>3. Removed special characters and numbers:</i>
+                    <ul>
+                        <li>Along with texts, the reviews were a mix of punctuations, emojis and numbers, which are not required in this use case. Hence, they were removed from the dataset.</li>
+                    </ul>
+                    <img src="images/b2c_dataprep3.png" style="max-width: 90%; align-items:center; height: auto;margin: 0 auto; display: block; " >
+                </li>
+                <br>
+
+                <li>4. Lemmatization:</i>
+                    <ul>
+                        <li>The words were lemmatized to ensure different forms of a same word are treated identically</li>
+                    </ul>
+                    <img src="images/b2c_dataprep4.png" style="max-width: 90%; align-items:center; height: auto;margin: 0 auto; display: block; " >
+                </li>
+                <br>
+
+                <li>5. Stop words Removal:</i>
+                    <ul>
+                        <li>The reviews included words that lacked contextual relevance; hence they were removed from the texts. Along with NLTK’s inbuilt stop words, a few self-defined stop words like “Uber” and “Driver” were also removed.</li>
+                    </ul>
+                    <img src="images/b2c_dataprep5.png" style="max-width: 90%; align-items:center; height: auto;margin: 0 auto; display: block; " >
+                </li>
+                <br>
+                <li>6. TFIDF Vectorization:</i>
+                    <ul>
+                        <li>Finally, the words have been vectorized by calculating the frequency and normalizing them.</li>
+                        <li>Max_df of 0.7 has been applied ensure removal of content specific stop words.</li>
+                    </ul>
+                    <img src="images/b2c_dataprep6.png" style="max-width: 90%; align-items:center; height: auto;margin: 0 auto; display: block; " >
+                </li>
+            </ul>
+                <br>
+        
+            <h4>Word Cloud before and after cleaning:</h4>
+                <img src="images/b2c_dataprep7.png" style="max-width: 90%; align-items:center; height: auto;margin: 0 auto; display: block; " >
+        <br>
+        <p>Find the data preprocessing code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/01_Data_Preparation/Data_Cleaning.ipynb" target="_blank">here</a></p>
+        <p>Download the preprocessed data <a href="https://drive.google.com/drive/folders/1LRSoqRIfiOYIubV9_JjoJozAj-UUQzzV?usp=drive_link" target="_blank">here</a></p>
+
+        </div>
+    </div>
+
+    <div class="tab-contents" id="Data-Exploration-Content">
+        <div class="intro">
+            <h1 class="sub-title">Data Exploration</h1>
+            <br><br>
+            <p style="color: red; text-align: center; font-size: 25px;">This section is a work in progress! Please check back soon...</p>
+            
+        </div>
+    </div>
+
+    <div class="tab-contents" id="Modeling-Content">
+        <div class="intro">
+            <h1 class="sub-title">Modeling</h1>
+            <br><br>
+            <p style="color: red; text-align: center; font-size: 25px;">This section is a work in progress! Please check back soon...</p>
+        </div>
+    </div>
+</div>
+
+<div class="copyright" id="copyright">
+</div>
 
 <script>
 
