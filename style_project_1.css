@@ -52,7 +52,8 @@ body{
 /* -----------Data Preparation--------------- */
 .intro h3 {
     text-align: center; /* Center-align the text */
-    color: #61b752
+    color: #61b752;
+    font-size: 25px;
 }
 
 .intro p b{
@@ -65,6 +66,7 @@ body{
 .intro p a{
     font-family: "Times New Roman", Times, serif; /* Change font to Times New Roman */
     font-size: 18px;
+    color: blue;
 }
 
 .intro ul {
@@ -296,7 +298,7 @@ nav ul li:hover .sub-menu-1 ul li{
 .tab-titles{
     display: flex;
     width: 100%;
-    margin: 4% 12% 3%;
+    margin: 4% 5% 3%;
     align-content: center;
 
 }

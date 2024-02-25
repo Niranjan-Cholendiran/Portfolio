@@ -26,16 +26,16 @@
                                     <ul>
                                         <li><a href="#Introduction-Content" onclick="opentab('Introduction-Content')">Introduction</a></li>
                                         <li><a href="#Data-Preparation-Content" onclick="opentab('Data-Preparation-Content')">DataPrep_EDA</a></li>
-                                        <li class="sub-menu-3-hover"><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Modeling</a>
+                                        <li class="sub-menu-3-hover"><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Modeling</a>
                                             <div class="sub-menu-3">
                                                 <ul>
-                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Clustering</a></li>
-                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">ARM</a></li>
-                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Naïve Bayes</a></li>
-                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Decision Tree</a></li>
-                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">SVMs</a></li>
-                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Regression</a></li>
-                                                    <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Neural Nets</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Clustering</a></li>
+                                                    <li><a href="#ARM-Content" onclick="opentab('ARM-Content')">ARM</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Naïve Bayes</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Decision Tree</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">SVMs</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Regression</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Neural Nets</a></li>
                                                 </ul>
                                             </div>                                        
                                         </li>
@@ -97,7 +97,8 @@
         <p class="tab-links active-link" onclick="opentab('Introduction-Content')">Introduction</p>
         <p class="tab-links" onclick="opentab('Data-Preparation-Content')">Data Collection & Preparation</p>
         <p class="tab-links" onclick="opentab('Data-Exploration-Content')">Data Exploration (EDA)</p>
-        <p class="tab-links" onclick="opentab('Modeling-Content')">Modeling</p>
+        <p class="tab-links" onclick="opentab('Clustering-Content')">Clustering</p>
+        <p class="tab-links" onclick="opentab('ARM-Content')">ARM</p>
     </div>
 
     <div class="tab-contents active-tab" id="Introduction-Content">
@@ -128,6 +129,7 @@
             </ol>
             <br>
             <p>A very few companies have achieved excellence in optimizing their inventory. For instance, Companies like Amazon, Walmart, and Coca-Cola have successfully implemented predictive analytics in their inventory management systems, resulting in significant cost savings and improved operational efficiency. Particularly, Amazon uses predictive analytics to manage its vast inventory effectively. By analyzing customer buying behaviour, Amazon can predict product demand with a high degree of accuracy and adjust its inventory levels accordingly. This has helped Amazon reduce its inventory holding costs and improve customer satisfaction (<a href="https://www.brisklogic.co/the-predictive-analytics-in-inventory-management/" target="_blank">source</a>).</p>
+            <br><p>In summary, effective inventory management is essential for retailers to remain competitive in today's dynamic marketplace. By embracing technological advancements and implementing robust inventory optimization strategies, retailers can minimize stock-related challenges, maximize profitability, and deliver superior value to customers.</p>
         </div>
     </div>
 
@@ -377,13 +379,163 @@
         </div>
     </div>
 
-    <div class="tab-contents" id="Modeling-Content">
+    <div class="tab-contents" id="Clustering-Content">
         <div class="intro">
-            <h1 class="sub-title">Modeling</h1>
+            <h1 class="sub-title">Clustering</h1>
             <br><br>
-            <p style="color: red; text-align: center; font-size: 25px;">This section is a work in progress! Please check back soon...</p>
+            <p>Clustering is as an unsupervised learning method in machine learning, dividing data based on feature distances. Its goal is to group similar records within clusters (cohesion) while maintaining dissimilarity from objects in other clusters (separation). There are multiple ways to implement clustering however the most popular implementation includes K-Means and Hierarchical Clustering.</p>
+            <br>
+            <p><b>K-Means Clustering: </b>This partitioning technique clusters data into a set number of clusters by aggregating the K closest points to a designated point. Various distance metrics (Euclidean, Manhattan, etc.) can be utilized based on the context.</b></p>
+            <img src="images/clustering_kmeans.png" class= "DataPrep-Step" style="max-width: 65%;">
+            <br>
+            <p><b>Hierarchical Clustering: </b>This method organizes data hierarchically, constructing dendrogram tree structures. Agglomerative clustering starts with the assumption that each point forms its own cluster, gradually merging them until ideally only one cluster remains. Similar to K-Means, diverse distance metrics and linkage methods are available, chosen according to the specific case.</b></p>
+            <img src="images/clustering_hier.png" class= "DataPrep-Step" style="max-width: 30%;">
+            <br>
+            <p>For this application, both clustering and hierarchical clustering are applied in this scenario to categorize liquor items based on demand and profitability. This will aid in stock planning to maximize profit.</b></p>
+            <br>
+            <h3>Data Preparation</h3>
+            <br><br>
+            <p>Liquor information, its sales history and net profit data is required to implement and infer the clustering results. Hence, data clustering data was prepared by:</b></p>
+            <br>
+            <ol>
+                <li>Left joining Product_Info with Product_Purchase_Sale_Price tables and taking purchase and sales price from the right table to calculate profit_per_product.</li>
+                <br>
+                <li>Right joining the resultant data with SalesHistory table to calculate demand per day.</li>  
+            </ol>
+            <br>
+            <img src="images/clustering_dataprep.PNG" class= "DataPrep-Step" style="max-width: 100%;">
+            <br>
+            <p><b>Data Filter: </b>The data was filter for store 51 and only sales data between quarter 1 to 3 were used, saving quarter 4 for testing in the later stages.</p>
+            <br>
+            <p>Find the SQL script used to retrive and merge data <a href="https://github.com/Niranjan-Cholendiran/Inventory-Optimization-WIP-/blob/main/Clustering/Data%20Retrival%20PostGreys%20Script.sql" target="_blank">here</a></p>
+            <br>
+            <h3>Experiment Setup & Results</h3>
+            <h4>Data Normalization:</h4><br>
+            <p>The Demand and Profit values were on different scale and were well spread out. Hence, Min-Max normalization was applied.</p>
+            <br><img src="images/clustering_normalization.PNG" class= "DataPrep-Step" style="max-width: 30%;">
+            <br><img src="images/clustering_normalization2.PNG" class= "DataPrep-Step" style="max-width: 100%;">
+            <br>
+
+            <h4>K-Means Clustering:</h4><br>
+            <ol>
+                <li>Determining the Optimal Number of Clusters:</li><br>
+                <p>Both the Elbow method and Silhouette method were used to find the optimal cluster count.</p>
+                <br><img src="images/clustering_optimalcluster.PNG" class= "DataPrep-Step" style="max-width: 70%;">
+                <p>Both methods suggested four number of clusters. However, 3 and 5 clusters were also computed for comparison.</p>
+                <br>
+
+                <li>K-Means implementation:</li><br>
+                <p>K-Means clustering with 3, 4 and 5 clusters using Euclidean distance was performed.</p>
+                <iframe src="external_html/kmeans_cluster_3.html" width= "100%" height= "300px" frameborder="0"></iframe>
+                <iframe src="external_html/kmeans_cluster_4.html" width="100%" height="300px" frameborder="0"></iframe>
+                <iframe src="external_html/kmeans_cluster_5.html" width="100%" height="300px" frameborder="0"></iframe>
+                <p>Find the data preparation and K-Means clustering Python script <a href="https://github.com/Niranjan-Cholendiran/Inventory-Optimization-WIP-/blob/main/Clustering/K-Means%20Clustering.ipynb" target="_blank">here</a></p>
+                <br>
+            </ol>
+            <br>
+
+            <h4>Hierarchical Clustering:</h4><br>
+            <ol>
+                <li>Determining the Optimal Number of Clusters:</li><br>
+                <p>The Elbow method and Silhouette method were utilized to identify the optimal cluster count:</p>
+                <br><img src="images/clustering_hier_optimalcluster.PNG" class= "DataPrep-Step" style="max-width: 70%;"><br>
+                <p>While both methods suggested two clusters, which is insufficient for this use case, attempts were made to cluster the data into 3, 4, and 5 clusters, and the results were compared.</p>
+                <br>
+
+                <li>Agglomerative clustering implementation:</li><br>
+                <p>Hierarchical clusters were computed using Cosine Similarity distance metric, and Ward linkage method. The dendogram of the result is displayed below:</p>
+                <br><img src="images/clustering_hier_clusters.PNG" class= "DataPrep-Step" style="max-width: 70%;">
+                <img src="images/clustering_hier_dendogram.png" class= "DataPrep-Step" style="max-width: 50%;">
+                <br>
+            </ol>
+            <br>
+            <p>Find the hierarchical clustering R script <a href="https://github.com/Niranjan-Cholendiran/Inventory-Optimization-WIP-/blob/main/Clustering/Hierarchical%20Clustering.Rmd" target="_blank">here</a></p>
+            <br>
+            <h3>Inference & Conclusion</h3>
+            <br>
+            <p>Both K-Means and Hierarchical clustering have effectively organized the data, displaying a similar distribution across clusters with minimal discrepancies. Notably, cluster number 2 exhibits the highest number of records in both methods. After careful evaluation, the <b>4-cluster partition is chosen as the final clustering solution for this analysis.</b> While the 3-cluster split captures a larger proportion of points in the Low Profit Low demand cluster, 5 clusters divides the data into unnecessary chunks. In contrast, the 4-cluster split aligns better with the objective. Summary of each clusters are presented below:</p>
+            <br>
+            <p>The clusters represent the following:</p>
+            <br><img src="images/clustering_cluster_summary.PNG" class= "DataPrep-Step" style="max-width: 50%;">
+            <br>
+            <h4>Cluster 1: Cash Cow- High Demand Low Profit</h4>
+            <p>These are cash cow products that are very frequently purchased that yield lowest profit per product but yields the highest profit overall. These products generate consistent cash flow and are often considered as the main revenue drivers for a company. These products must have the highest inventory share.</p>
+            <br>
+
+            <h4>Cluster 0: Commodity- Low Demand Moderate Profit</h4>
+            <p>These are commodity products that are typically bought less but have moderate profit leading to a decent overall profit. These products must have moderate inventory share.</p>
+            <br>
+
+            <h4>Cluster 3: Luxury- Low Demand High Profit</h4>
+            <p>These are premium products that are rarely purchased but yields the highest profit. These products must have the lowest inventory share.</p>
+            <br>
+
+            <h4>Cluster 2: Laggards- Low Demand Low Profit</h4>
+            <p>These products are laggards that have reasonable demand but low profits. These products usually take up the inventory space and results in low overall profit. These products must have low inventory share.</p>
+            <br>
+            <p>The above four clusters are well interpretable, and the cluster numbers are renamed with its appropriate names and are added as a feature “ProductDemandCluster” in the product info table.</p>
+            <br>
+
+
         </div>
     </div>
+    
+
+    <div class="tab-contents" id="ARM-Content">
+        <div class="intro">
+            <h1 class="sub-title">Association Rule Mining</h1>
+            <br><br>
+            <p>Association Rule Mining (ARM) is an unsupervised machine learning method used to discover patterns and association in a transaction data. The goal is to typically identify relationships between the itemset in the format <b>{Antecedent}</b> -> <b>{Consequent}</b>. ARM is computed using three key measures:</p>
+            <br><img src="images/ARM intro 1.png" class= "DataPrep-Step" style="max-width: 70%;">
+            <br>
+            <ol>
+                <li>Support:
+                    <ul>
+                        <li>It is the frequency of an item/ itemset occurred in the entire sale. It is more like the prior probability. o	Low support signifies that the product is not purchased by sufficient # people to apply association rules.</li>
+                    </ul>
+                </li>
+                <li>Confidence:</li>
+                    <ul>
+                        <li>Defines the level of confidence that Consequents will be bought when Antecedent is bought already. It is more like a conditional probability. o	Low confidence signifies that consequent is independent of antecedent and no association exist between them.</li>
+                    </ul>
+                <li>Lift:</li>
+                    <ul>
+                        <li>Defines how much the probability of buying consequent is lifted when purchased along with antecedent rather just buying them independently. Always, Confidence > Support (Lift > 1) is ideal as it signifies that buying Antecedent lifts the purchase of Consequent. It is conditional probability divided by prior probability.</li>
+                    </ul>
+            </ol>
+            <br><img src="images/ARM intro 22.PNG" class= "DataPrep-Step" style="max-width: 70%;">
+            <br>
+            <p>Apriori stands as a widely utilized association rule mining (ARM) technique rooted in the fundamental principle: "If an itemset is frequent, then all of its subsets must also be frequent." Leveraging this property, ARM efficiently prunes item sets with low support, thereby minimizing the search space. In this project, we're using the Apriori algorithm to find connections between liquor products based on their Alcohol Type and Flavor. <b>The goal is to figure out which combinations of Alcohol Type and Flavor are frequently bought together, giving us insights into customer preferences.</b></p>
+            <br>
+            <h3>Data Preparation</h3><br>
+            <p>Unlike other machine learning algorithms, ARM is used with unlabelled transactional data. Therefore, from the Sales_History dataset, only variables related to alcohol type and flavor profile are extracted.</p>
+            <br>
+            <img src="images/arm_dataprep.PNG" class= "DataPrep-Step" style="max-width: 80%;">
+            <br>
+
+            <h3>Experiment Setup & Results</h3><br>
+            <p>Apriori algorithm was used to extract rules from the dataset for the below combinations:</p>
+            <ul>
+                <li style="list-style-type: circle">Minimum Support: 5%</li>
+                <li style="list-style-type: circle">Confidence: 10%</li>
+            </ul>
+            <p>The item sets with top 10 support, confidence and lift are displayed below along with it's network representation.</p>
+            <br>
+            <img src="images/arm_toprules.PNG" class= "DataPrep-Step" style="max-width: 80%;">
+            <div style="text-align: center;">
+                <iframe width="800" height="600" src='external_html/ARM_network_graph.html'></iframe>
+            </div>
+            <img src="images/arm_rules_network.png" class= "DataPrep-Step" style="max-width: 40%;">
+            <br>
+
+            <h3>Conclusion</h3><br>
+            <p>The findings indicate that Fruity flavor and Wine alcohol type are the top sellers individually, showing high support. Specifically, the combination of Fruity flavor with Wine is the most commonly purchased, displaying high confidence and lift. However, no significant relationships are observed among other combinations. This suggests that, in general, <b>people do not exhibit strong preferences for specific Alcohol Types and Flavors beyond Fruity flavor with Wine.</b></p>
+            <br>
+            <p>Find the ARM R script <a href="https://github.com/Niranjan-Cholendiran/Inventory-Optimization-WIP-/blob/main/ARM/ARM.Rmd" target="_blank">here</a></p>
+        </div>
+    </div>
+
+
 </div>
 
 <div class="copyright" id="copyright">

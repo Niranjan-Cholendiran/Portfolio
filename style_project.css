@@ -52,7 +52,7 @@ body{
 /* -----------Data Preparation--------------- */
 .intro h3 {
     text-align: center; /* Center-align the text */
-    color: #61b752
+    color: #61b752;
 }
 
 .intro p b{
