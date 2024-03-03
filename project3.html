@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niranjan's Portfolio</title>
-    <link rel="stylesheet" href="style_WIP.css">
+    <link rel="stylesheet" href="style_project_3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+
     <script src="https://kit.fontawesome.com/90171aec82.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
 <div id="header">
     <div class="container">
         <nav>
@@ -18,76 +19,176 @@
                 <li><a href="index.html#header">Home</a></li>
                 <li><a href="index.html#about">About Me</a></li>
                 <li><a href="index.html#projects">My Work</a>
-                    <li><a href="#projects">My Work</a>
-                        <div class="sub-menu-1"> 
-                            <ul>
-                                <li class="sub-menu-2-hover"><a href="project1.html#header">Inventory Optimization (CSCI 5622)</a>
-                                    <div class="sub-menu-2">
-                                        <ul>
-                                            <li><a href="project1.html#Introduction-Content">Introduction</a></li>
-                                            <li><a href="project1.html#navigation-content">DataPrep_EDA</a></li>
-                                            <li class="sub-menu-3-hover"><a href="project1.html#navigation-content">Modeling</a>
-                                                <div class="sub-menu-3">
-                                                    <ul>
-                                                        <li><a href="project1.html#navigation-content">Clustering</a></li>
-                                                        <li><a href="project1.html#navigation-content">ARM</a></li>
-                                                        <li><a href="project1.html#navigation-content">Naïve Bayes</a></li>
-                                                        <li><a href="project1.html#navigation-content">Decision Tree</a></li>
-                                                        <li><a href="project1.html#navigation-content">SVMs</a></li>
-                                                        <li><a href="project1.html#navigation-content">Regression</a></li>
-                                                        <li><a href="project1.html#navigation-content">Neural Nets</a></li>
-                                                    </ul>
-                                                </div>                                        
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="sub-menu-2-hover"><a href="project2.html#header">B2C Brand Perception (INFO 5871)</a>
-                                    <div class="sub-menu-2">
-                                        <ul>
-                                            <li><a href="project2.html#Introduction-Content">Introduction</a></li>
-                                            <li><a href="project2.html#navigation-content">Data</a></li>
-                                            <li><a href="project2.html#navigation-content">Data Exploration</a></li>
-                                            <li class="sub-menu-3-hover"><a href="#">Modeling</a>
-                                                <div class="sub-menu-3">
-                                                    <ul>
-                                                        <li><a href="project2.html#navigation-content">Clustering</a></li>
-                                                        <li><a href="project2.html#navigation-content">ARM</a></li>
-                                                        <li><a href="project2.html#navigation-content">Naïve Bayes</a></li>
-                                                        <li><a href="project2.html#navigation-content">Decision Tree</a></li>
-                                                        <li><a href="project2.html#navigation-content">SVMs</a></li>
-                                                        <li><a href="project2.html#navigation-content">Regression</a></li>
-                                                        <li><a href="project2.html#navigation-content">Neural Nets</a></li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="sub-menu-2-hover"><a href="project3.html#header">Dock Watch (CSCI 5502)</a>
-                                    <div class="sub-menu-2">
-                                        <ul>
-                                            <li><a href="project3.html#header">Introduction</a></li>
-                                            <li><a href="project3.html#header">Data Preparation</a></li>
-                                            <li><a href="project3.html#header">Data Exploration</a></li>
-                                            <li class="sub-menu-3-hover"><a href="project3.html#header">Modeling</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>                
-                    </li>                
+                    <div class="sub-menu-1"> 
+                        <ul>
+                            <li class="sub-menu-2-hover"><a href="project1.html#header">Inventory Optimization (CSCI 5622)</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="#Introduction-Content" onclick="opentab('Introduction-Content')">Introduction</a></li>
+                                        <li><a href="#Data-Preparation-Content" onclick="opentab('Data-Preparation-Content')">DataPrep_EDA</a></li>
+                                        <li class="sub-menu-3-hover"><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Modeling</a>
+                                            <div class="sub-menu-3">
+                                                <ul>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Clustering</a></li>
+                                                    <li><a href="#ARM-Content" onclick="opentab('ARM-Content')">ARM</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Naïve Bayes</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Decision Tree</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">SVMs</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Regression</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Neural Nets</a></li>
+                                                </ul>
+                                            </div>                                        
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sub-menu-2-hover"><a href="project2.html#header">B2C Brand Perception (INFO 5871)</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="project2.html#Introduction-Content">Introduction</a></li>
+                                        <li><a href="project2.html#navigation-content">Data</a></li>
+                                        <li><a href="project2.html#navigation-content">Data Exploration</a></li>
+                                        <li class="sub-menu-3-hover"><a href="#">Modeling</a>
+                                            <div class="sub-menu-3">
+                                                <ul>
+                                                    <li><a href="project2.html#navigation-content">Clustering</a></li>
+                                                    <li><a href="project2.html#navigation-content">ARM</a></li>
+                                                    <li><a href="project2.html#navigation-content">Naïve Bayes</a></li>
+                                                    <li><a href="project2.html#navigation-content">Decision Tree</a></li>
+                                                    <li><a href="project2.html#navigation-content">SVMs</a></li>
+                                                    <li><a href="project2.html#navigation-content">Regression</a></li>
+                                                    <li><a href="project2.html#navigation-content">Neural Nets</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sub-menu-2-hover"><a href="project3.html#header">Dock Watch (CSCI 5502)</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="#Introduction-Content" onclick="opentab('Introduction-Content')">Introduction</a></li>
+                                        <li><a href="#Experiment-Setup-Content" onclick="opentab('Experiment-Setup-Content')">Experiment Setup</a></li>
+                                        <li><a href="#Data-Exploration-Content" onclick="opentab('Data-Exploration-Content')">Data Exploration</a></li>
+                                        <li><a href="#Modeling-Content" onclick="opentab('Modeling-Content')">Modeling & Results</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>                
                 </li>
                 <li><a href="index.html#contact">Contact</a></li>
                 <i class="fas fa-times" onclick="closemenu()"></i>
             </ul>
             <i class="fas fa-bars" onclick="openmenu()"></i>
         </nav>
-        
+        <div class="header-text">
+            <h1 style="font-size: 60px; ">DockWatch: BCycle Wait Time Prediction</h1>
+        </div>
+        <div class="image-credit"><a href="https://www.freepik.com/free-ai-image/diminishing-perspective-old-archive-shelves-glow-generated-by-ai_41283910.htm#query=inventory&position=41&from_view=search&track=sph&uuid=b9640a9c-497c-4233-b6ad-bb5a98163567">Image By vecstock</a>
+        </div>
     </div>
 </div>
 
 <!-- -----------Project Contents---------- -->
+
+<div class="container" id="navigation-content">
+    <div class="tab-titles" >
+        <p class="tab-links active-link" onclick="opentab('Introduction-Content')">Introduction</p>
+        <p class="tab-links" onclick="opentab('Experiment-Setup-Content')">Experiment Setup</p>
+        <p class="tab-links" onclick="opentab('Data-Exploration-Content')">Data Exploration (EDA)</p>
+        <p class="tab-links" onclick="opentab('Modeling-Content')">Modeling & Results</p>
+    </div>
+
+    <div class="tab-contents active-tab" id="Introduction-Content">
+        <div class="intro">
+            <h1 class="sub-title">Introduction</h1>
+            <br><br>
+            <p>Boulder BCycle is a popular and convenient transportation service in Boulder, Colorado. It offers electric bikes stationed throughout the city, providing a sustainable and efficient means of commuting. Notably, the service is tailored to the needs of the community, as it offers a unique benefit to students by providing them with free rides for up to one hour per trip. This student-friendly policy makes it an attractive choice for the University of Colorado Boulder's student population, who frequently utilize Boulder BCycle to commute between their residences and the university. The service plays a key role in the city's transport system, supporting sustainability goals and meeting student needs.</p>
+            <img src="images/dockwatch_intro1.png" class= "intro-quote">
+            <br>
+            <p>In Boulder's BCycle system, users often encounter reliability issues and struggle to predict bike station availability. Hence in this project is focused on transforming the BCycle experience by dissecting usage patterns and calculating waiting times for each station. By analyzing historical data and real-time inputs, I have provied users with valuable insights, enabling them to make informed decisions about when and where to pick up a bike. This initiative seeks to enhance the overall convenience and efficiency of the service, ultimately making BCycle an even more reliable and accessible mode of transportation for the Boulder community.</p>
+            <br>
+        </div>
+    </div>
+
+    <div class="tab-contents" id="Experiment-Setup-Content">
+        <div class="intro">
+            <br>
+            <img src="images/dockwatch_solution_architecture.PNG" class= "intro-quote" style="max-width: 70%;">
+            <br>
+            <p><span>1. Data Collection:</span> Relevant data were collected from 3 API sources</p>
+            <br>
+            <ol style="padding-left: 80px;">
+                <li><b>GBFS:</b> GBFS API was used to collect live station status data. A major problem with this data is that Problem with this API is it only provides the current station status but not historical data, the was called frequently and the data was pulling every 3 mins.</li>
+                <li><b>OpenMeteo API:</b> OpenMeteo API was used to collect the historical and current  weather information.</li>
+                <li><b>CU Boulder Class Search:</b> CU class calender was extracted to record classes that were scheduled on a particular day.</li>
+            </ol>
+            <br>
+            <p><span>2. Data Storage:</span> Amazon EC2 was used to run the data collection script without interruptions and the results were stored in a PostGrey SQL server.</p>
+            <br>
+            <p><span>3. Data Preprocessing:</span> A python preprocessing pipeline was set-up to implement the following data preprocessing.</p>
+            <br>
+            <ol style="padding-left: 80px;">
+                <li>Handle missing values</li>
+                <li>Create Synthetic Features</li>
+                <li>Normalization</li>
+                <li>Label encoding</li>
+                <li>Join Tables</li>
+            </ol>
+            <br>
+            <p><span>4. Analysis & Modeling:</span> The pre-processed data was finally pulled into Tableau for EDA and Visualization, and into an other Python pipeline for Modeling.</p>
+        </div>
+    </div>
+
+    <div class="tab-contents" id="Data-Exploration-Content">
+        <div class="intro">
+            <h1 class="sub-title">Data Exploration</h1>
+            <br><br>
+            <p>Some of the crucial Exploratory Data Analysis that focuses on decoding the BCycle usage patterns across Boulder has been covered in this section. These insights are later used in building the classification model.</p>
+            
+
+            <br><br>
+            <ul style="padding-left: 10px;"">
+
+                <li><h4 style="color: #61b752; font-weight: bold;">Popular BCycle Stations</h4></i></li>
+                <img src="images/dockwatch_station_map.png" class= "DataPrep-Step">
+                <br>
+                <p>There are a 54 BCycle stations located in Boulder covering the entire city. However, not every station is frequently used. Since BCycle is popular in Boulder among the students of CU as they get free membership, there are a handful of stations that are frequently used. For our analysis the top 10 busiest stations have been chosen.</p>
+                <br>
+                <img src="images/dockwatch_station_map_popular.png" class= "DataPrep-Step">
+                <br>
+                <li><h4 style="color: #61b752; font-weight: bold;">Busiest Time of The Day</h4></i></li>
+                <img src="images/dockwatch_busytime.PNG" class= "DataPrep-Step">
+                <br>
+                <p>BCycle is available for public use around the clock, and it is widely used throughout the day. However, the busiest period of the day across the 10 most popular stations has been focused. The above figure conveys that the wait times have a considerable variance, and the time of the day has a high influence on it. From figure, it is evident that the busiest period occurs between morning to evening, particularly during regular CU classes.</p>
+                <br>
+                                
+                <li>Find the Tableau dashboard <a href="https://public.tableau.com/app/profile/niranjan.cholendiran/viz/DockWatch/DockWatch" target="_blank">here.</a></li>
+            </ul>
+            
+            <br>
+        </div>
+    </div>
+
+    <div class="tab-contents" id="Modeling-Content">
+        <div class="intro">
+            <h1 class="sub-title">Modeling & Results</h1>
+            <br><br>
+            <img src="images/dockwatch_modeling.PNG" class= "DataPrep-Step">
+            <br><br>
+            <p>The data is imbalanced and has more features to process. Hence, a model that can be robust to fetch temporal patterns from these complex datasets can only provide accurate results. Moreover, with only one month of data in hand completing this classification task is only possible by using Random Forest, XGBoost, or SVM models. On researching. Random Forest classifier yielded a better result than other models. </p>
+            <br><br>
+            <img src="images/dockwatch_accuracy_split.PNG" class= "DataPrep-Step">
+            <br><br>
+            <p>The best model was also tested for the busiest times of the day and the results were better. Stations with less wait time variance recorded higher accuracy of over with the highest in C4C of 89%.</p>
+            <br>
+        </div>
+    </div>
+</div>
+
+<div class="copyright" id="copyright">
+</div>
 
 
 <script>
@@ -108,6 +209,35 @@
 
 </script>
 
+<script>
 
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+<script>
+    const scriptURL = '< add you own link here >' // add your own app script link here
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </body>
 </html>
