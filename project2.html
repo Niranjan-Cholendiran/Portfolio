@@ -20,6 +20,7 @@
                 <li><a href="index.html#projects">My Work</a>
                         <div class="sub-menu-1"> 
                             <ul>
+
                                 <li class="sub-menu-2-hover"><a href="project1.html#header">Inventory Optimization (CSCI 5622)</a>
                                     <div class="sub-menu-2">
                                         <ul>
@@ -41,28 +42,27 @@
                                         </ul>
                                     </div>
                                 </li>
+
+
                                 <li class="sub-menu-2-hover"><a href="project2.html#header">B2C Brand Perception (INFO 5871)</a>
                                     <div class="sub-menu-2">
                                         <ul>
-                                            <li><a href="project2.html#Introduction-Content">Introduction</a></li>
-                                            <li><a href="project2.html#navigation-content">Data</a></li>
-                                            <li><a href="project2.html#navigation-content">Data Exploration</a></li>
-                                            <li class="sub-menu-3-hover"><a href="#">Modeling</a>
+                                            <li><a href="#Introduction-Content" onclick="opentab('Introduction-Content')">Introduction</a></li>
+                                            <li><a href="#Data-Preparation-Content" onclick="opentab('Data-Preparation-Content')">DataPrep</a></li>
+                                            <li class="sub-menu-3-hover"><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Modeling</a>
                                                 <div class="sub-menu-3">
                                                     <ul>
-                                                        <li><a href="project2.html#navigation-content">Clustering</a></li>
-                                                        <li><a href="project2.html#navigation-content">ARM</a></li>
-                                                        <li><a href="project2.html#navigation-content">Naïve Bayes</a></li>
-                                                        <li><a href="project2.html#navigation-content">Decision Tree</a></li>
-                                                        <li><a href="project2.html#navigation-content">SVMs</a></li>
-                                                        <li><a href="project2.html#navigation-content">Regression</a></li>
-                                                        <li><a href="project2.html#navigation-content">Neural Nets</a></li>
+                                                        <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Clustering</a></li>
+                                                        <li><a href="#LDA-Content" onclick="opentab('LDA-Content')">LDA</a></li>
+                                                        <li><a href="#ARM-Content" onclick="opentab('ARM-Content')">ARM</a></li>
                                                     </ul>
                                                 </div>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
+
+
                                 <li class="sub-menu-2-hover"><a href="project3.html#header">Dock Watch (CSCI 5502)</a>
                                     <div class="sub-menu-2">
                                         <ul>
@@ -73,6 +73,8 @@
                                         </ul>
                                     </div>
                                 </li>
+
+
                             </ul>
                         </div>                
                     </li>               
@@ -85,8 +87,6 @@
         <div class="header-text" style="padding-top: 3%;">
             <h1>B2C Brand Perception Analysis</h1>
         </div>
-        <div class="image-credit"><a href="https://www.freepik.com/free-ai-image/diminishing-perspective-old-archive-shelves-glow-generated-by-ai_41283910.htm#query=inventory&position=41&from_view=search&track=sph&uuid=b9640a9c-497c-4233-b6ad-bb5a98163567">Image By vecstock</a>
-        </div>
     </div>
 </div>
 
@@ -95,8 +95,9 @@
     <div class="tab-titles" >
         <p class="tab-links active-link" onclick="opentab('Introduction-Content')">Introduction</p>
         <p class="tab-links" onclick="opentab('Data-Preparation-Content')">Data Collection & Preparation</p>
-        <p class="tab-links" onclick="opentab('Data-Exploration-Content')">Data Exploration (EDA)</p>
-        <p class="tab-links" onclick="opentab('Modeling-Content')">Modeling</p>
+        <p class="tab-links" onclick="opentab('Clustering-Content')">Clustering</p>
+        <p class="tab-links" onclick="opentab('LDA-Content')">LDA</p>
+        <p class="tab-links" onclick="opentab('ARM-Content')">ARM</p>
     </div>
 
     <div class="tab-contents active-tab" id="Introduction-Content">
@@ -283,22 +284,188 @@
         </div>
     </div>
 
-    <div class="tab-contents" id="Data-Exploration-Content">
+    <div class="tab-contents" id="Clustering-Content">
         <div class="intro">
-            <h1 class="sub-title">Data Exploration</h1>
+            <h1 class="sub-title">Clustering</h1>
             <br><br>
-            <p style="color: red; text-align: center; font-size: 25px;">This section is a work in progress! Please check back soon...</p>
+            <p>Clustering is as an unsupervised learning method in machine learning, dividing data based on feature distances. Its goal is to group similar records within clusters (cohesion) while maintaining dissimilarity from objects in other clusters (separation). There are multiple ways to implement clustering however the most popular implementation includes K-Means and Hierarchical Clustering.</p>
+            <br>
+            <p><b>K-Means Clustering: </b>This partitioning technique clusters data into a set number of clusters by aggregating the K closest points to a designated point. Various distance metrics (Euclidean, Manhattan, etc.) can be utilized based on the context.</b></p>
+            <img src="images/clustering_kmeans.png" class= "DataPrep-Step" style="max-width: 65%;">
+            <br>
+            <p><b>Hierarchical Clustering: </b>This method organizes data hierarchically, constructing dendrogram tree structures. Agglomerative clustering starts with the assumption that each point forms its own cluster, gradually merging them until ideally only one cluster remains. Similar to K-Means, diverse distance metrics and linkage methods are available, chosen according to the specific case.</b></p>
+            <img src="images/clustering_hier.png" class= "DataPrep-Step" style="max-width: 30%;">
+            <br>
+            <p>For this application, both clustering and hierarchical clustering are applied to group similar review based on the frequency of common words.</b></p>
+            <br>
+            <h3>Data Preparation</h3>
+            <br><br>
+            <p>Both K-Means and Hierarchical clustering needs numerical data to cluster. Therefore, the document term matrix that was preprepared in the previous section was used. The document term matrix is a review number- document matrix with the values as TFIDF normalized frequencies.</b></p>
+            <br>
+            <img src="images/b2c_docterm.PNG" class= "DataPrep-Step" style="max-width: 100%;">
+            <br>
+            <p>Download the data <a href="https://drive.google.com/file/d/1oIyPIhHV1HQ244Q_wC0VUB12GXZVAb0s/view?usp=sharing" target="_blank">here</a></p>
+            <br>
+            <h3>Experiment Setup & Results</h3>
+            <br>
+
+            <h4>Hierarchical Clustering:</h4><br>
+            <ol>
+                <li>Determining the Optimal Number of Clusters:</li><br>
+                <p>The Elbow method and Silhouette method were utilized to identify the optimal cluster count:</p>
+                <br><img src="images/b2c_hclust_optimalclusters.PNG" class= "DataPrep-Step" style="max-width: 70%;"><br>
+                <p>Both methods suggested two clusters as optimal.</p>
+                <br>
+
+                <li>Agglomerative clustering implementation:</li><br>
+                <p>Hierarchical clusters were computed using Cosine Similarity distance metric, and Ward linkage method. The dendogram of the result is displayed below:</p>
+                <br>
+                <img src="images/b2c_hclust_dendo.png" class= "DataPrep-Step" style="max-width: 80%;">
+                <br>
+            </ol>
+            <br>
+            <p>Find the hierarchical clustering R script <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/02_Clustering/Hierarchical_Clustering.Rmd" target="_blank">here</a></p>
+            <br>
+
+            <h4>K-Means Clustering:</h4><br>
+            <ol>
+                <li>Determining the Optimal Number of Clusters:</li><br>
+                <p>Both the Elbow method and Silhouette method were used to find the optimal cluster count.</p>
+                <br><img src="images/b2c_kmeans_optimalclusters.PNG" class= "DataPrep-Step" style="max-width: 70%;">
+                <p>Both methods suggested two number of clusters. However, 3 and 4 clusters were also computed for comparison.</p>
+                <br>
+
+                <li>K-Means implementation:</li><br>
+                <p>K-Means clustering with 2, 3 and 4 clusters using Euclidean distance was performed and the word clouds of each clusters were computed.</p>
+                <br>
+                <br><img src="images/b2c_kmeans_results1.PNG" class= "DataPrep-Step" style="max-width: 100%;">
+                <br><img src="images/b2c_kmeans_results2.PNG" class= "DataPrep-Step" style="max-width: 100%;">
+
+                <p>Find the K-Means clustering Python script <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/02_Clustering/K-Means.ipynb" target="_blank">here</a></p>
+                <br>
+            </ol>
+            <br>
             
+            <h3>Inference & Conclusion</h3>
+            <br>
+            <p>Both K-Means and Hierarchical clustering have effectively organized the data, displaying a similar distribution across clusters with minimal discrepancies. Almost all clusters have overlapping words due to the high frequency of selected words in the corpus. <b>This is a clear indicator that clustering reviews only based on similar words is insufficient.</b> Hence, a topic modeling alogrithm has been explored in the next section.</p>
+            <br>
         </div>
     </div>
 
-    <div class="tab-contents" id="Modeling-Content">
+
+
+    <div class="tab-contents" id="LDA-Content">
         <div class="intro">
-            <h1 class="sub-title">Modeling</h1>
+            <h1 class="sub-title">Latent Dirichlet Allocation (LDA)</h1>
             <br><br>
-            <p style="color: red; text-align: center; font-size: 25px;">This section is a work in progress! Please check back soon...</p>
+            <p>LDA is a topic modeling algorithm that is based on probabilistic modeling. In short, it assumes that each document in a corpus is a mixture of various topics, and each topic is a distribution over words. The goal of LDA is to discover these underlying topics based on the words that appear in the documents. In this project, the aim is to group reviews based on the underlying topics. </p> 
+
+            <br><img src="images/b2c_lda_intro.PNG" class= "DataPrep-Step" style="max-width: 70%;">
+            <br>
+
+            <h3>Data Preparation</h3>
+            <br><br>
+            <p>LDA needs frequency of words data. Therefore, the document term matrix that was preprepared in the previous sections was used. The document term matrix is a review number- document matrix with the values as TFIDF normalized frequencies.</b></p>
+            <br>
+            <img src="images/b2c_docterm.PNG" class= "DataPrep-Step" style="max-width: 100%;">
+            <br>
+            <p>Download the data <a href="https://drive.google.com/file/d/1oIyPIhHV1HQ244Q_wC0VUB12GXZVAb0s/view?usp=sharing" target="_blank">here</a></p>
+            <br>
+
+
+            <h3>Experiment Setup & Results</h3>
+            <br>
+            <p>LDA for 2, 3, 4 and 5 topics were performed for comparison. The results of each experiment is listed below:</p>
+            <img src="images/b2c_lda_topics_results.PNG" class= "DataPrep-Step" style="max-width: 80%;">
+            <br>
+            <p>Find the LDA Python script <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/03_LDA/01.%20LDA_Code.ipynb" target="_blank">here</a></p>
+            <br>
+            <h3>Conclusion</h3><br>
+            <p>Out of the above four topic modelling results, the one with 4 topics seems reasonable.</p>
+            <br>
+
+            <b>Topic 1: Service Quality and Comfort</b>
+            <ul><li>This topic may be discussing the quality of service provided by Uber drivers, focusing on aspects like cleanliness of vehicles, friendliness of drivers, professionalism, and overall comfort of the ride experience.</li></ul>
+
+            <b>Topic 2: Issues with Service and Payments</b>
+            <ul><li>This topic may be discussing the quality of service provided by Uber drivers, focusing on aspects like cleanliness of vehicles, friendliness of drivers, professionalism, and overall comfort of the ride experience.</li></ul>
+
+            <b>Topic 3: Feedback on Convenience and Reliability</b>
+            <ul><li>This topic likely discusses feedback on the convenience and reliability of Uber service, including discussions about fast and smooth rides, scheduling options, transportation choices, and experiences outside or on the road.</li></ul>
+
+            <b>Topic 4: Positive Experience and Appreciation</b>
+            <ul><li>This topic likely revolves around positive experiences and appreciation for Uber service, highlighting ease of use, excellent service, friendliness of drivers, and overall satisfaction with the experience.</li></ul>
+            <br>
+            <br>
+            <p><b>Next Steps:</b> Alternatelively, a method to achieve topic modeling based on the topic of interest rather than emotions can be explored. For example,</p>
+            <ul>   
+                <li>Sentence 1: "I was happy about the early pickup"</li>
+                <li>Sentence 2: "I was happy about how the car was comfortable"</li>
+                <li>Sentence 3: "I hated the ride. The ride was discomforting."</li>
+            </ul>
+            <p>Sentence 1 and 2 should not be grouped (because they have same emotion), rather 2 and 3 should be together because they talk about ride quality. This could be achieved by removing the sentiment related words prior to LDA. NLTK's SentimentIntensityAnalyzer could be a good start.</p>
         </div>
     </div>
+
+    <div class="tab-contents" id="ARM-Content">
+        <div class="intro">
+            <h1 class="sub-title">Association Rule Mining</h1>
+            <br><br>
+            <p>Association Rule Mining (ARM) is an unsupervised machine learning method used to discover patterns and association in a transaction data. The goal is to typically identify relationships between the itemset in the format <b>{Antecedent}</b> -> <b>{Consequent}</b>. ARM is computed using three key measures:</p>
+            <br><img src="images/ARM_intro_1.png" class= "DataPrep-Step" style="max-width: 70%;">
+            <br>
+            <ol>
+                <li>Support:
+                    <ul>
+                        <li>It is the frequency of an item/ itemset occurred in the entire sale. It is more like the prior probability. o	Low support signifies that the product is not purchased by sufficient # people to apply association rules.</li>
+                    </ul>
+                </li>
+                <li>Confidence:</li>
+                    <ul>
+                        <li>Defines the level of confidence that Consequents will be bought when Antecedent is bought already. It is more like a conditional probability. o	Low confidence signifies that consequent is independent of antecedent and no association exist between them.</li>
+                    </ul>
+                <li>Lift:</li>
+                    <ul>
+                        <li>Defines how much the probability of buying consequent is lifted when purchased along with antecedent rather just buying them independently. Always, Confidence > Support (Lift > 1) is ideal as it signifies that buying Antecedent lifts the purchase of Consequent. It is conditional probability divided by prior probability.</li>
+                    </ul>
+            </ol>
+            <br><img src="images/ARM_intro_2.png" class= "DataPrep-Step" style="max-width: 70%;">
+            <br>
+            <p>Apriori stands as a widely utilized association rule mining (ARM) technique rooted in the fundamental principle: "If an itemset is frequent, then all of its subsets must also be frequent." Leveraging this property, ARM efficiently prunes item sets with low support, thereby minimizing the search space. In this project, we're using the Apriori algorithm to find the combination of words that occurs together frequently in the reviews. <b>The goal is to figure out which word's frequency is lifted by other words, giving us insights into customer's perception on each topics.</b></p>
+            <br>
+            <h3>Data Preparation</h3><br>
+            <p>Unlike other machine learning algorithms, ARM is used with unlabelled transactional data. Hence, the reviews are preprocessed by removing stop words and lemmatizing them, and converted to basket format.</p>
+            <br>
+            <img src="images/b2c_arm_dataprep.PNG" class= "DataPrep-Step" style="max-width: 80%;">
+            <br>
+            <p>Find the data preparation Python script <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/04_ARM/basket_data_prep.ipynb" target="_blank">here</a></p>
+            <p>Download the data <a href="https://drive.google.com/file/d/1vwLcIdwYb6EYWwWCFdPutHpPSanpjPiN/view?usp=sharing" target="_blank">here</a></p>
+            <br>
+
+            <h3>Experiment Setup & Results</h3><br>
+            <p>Apriori algorithm was used to extract rules from the dataset for the below combinations:</p>
+            <ul>
+                <li style="list-style-type: circle">Minimum Support: 0.3%</li>
+                <li style="list-style-type: circle">Confidence: 0.5%</li>
+            </ul>
+            <p>The item sets with top 10 support, confidence and lift are displayed below along with it's network representation.</p>
+            <br>
+            <img src="images/b2c_arm_results.PNG" class= "DataPrep-Step" style="max-width: 80%;">
+            <div style="text-align: center;">
+                <iframe width="800" height="600" src='external_html/b2c_arm_interactive_plot.html'></iframe>
+            </div>
+            <img src="images/b2c_arm_network_graph.png" class= "DataPrep-Step" style="max-width: 50%;">
+            <br>
+            <p>Find the ARM implementation R script <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/04_ARM/ARM.Rmd" target="_blank">here</a></p>
+            <br>
+
+            <h3>Conclusion</h3><br>
+            <p>ARM results are not straight forward and not every rule represents a topic, however it indicates that many customers have written about the cleanliness of the vehicle and customer service.</p>
+            <br>
+        </div>
+    </div>
+
 </div>
 
 <div class="copyright" id="copyright">

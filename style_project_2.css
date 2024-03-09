@@ -280,6 +280,10 @@ nav ul li:hover .sub-menu-1 ul li{
     padding-top: 0%;
 }
 
+.intro a{
+    color: rgb(42, 185, 232);
+}
+
 .intro li{
     list-style: circle;
 }
@@ -296,8 +300,9 @@ nav ul li:hover .sub-menu-1 ul li{
 .tab-titles{
     display: flex;
     width: 100%;
-    margin: 4% 12% 3%;
+    margin: 3% 12% 3%;
     align-content: center;
+    font-size: 1px;
 
 }
 

@@ -75,7 +75,11 @@ body{
 .intro p a{
     font-family: "Times New Roman", Times, serif; /* Change font to Times New Roman */
     font-size: 18px;
-    color: blue;
+    color: rgb(42, 185, 232);
+}
+
+.intro a{
+    color: rgb(42, 185, 232);
 }
 
 .intro ul {
