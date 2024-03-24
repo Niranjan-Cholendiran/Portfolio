@@ -31,11 +31,11 @@
                                                 <ul>
                                                     <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Clustering</a></li>
                                                     <li><a href="#ARM-Content" onclick="opentab('ARM-Content')">ARM</a></li>
-                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Naïve Bayes</a></li>
-                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Decision Tree</a></li>
-                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">SVMs</a></li>
-                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Regression</a></li>
-                                                    <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Neural Nets</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('NB-Content')">Naïve Bayes</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('DT-Content')">Decision Tree</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Introduction-Content')">SVMs</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Introduction-Content')">Regression</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('Introduction-Content')">Neural Nets</a></li>
                                                 </ul>
                                             </div>                                        
                                         </li>
@@ -95,10 +95,12 @@
 <div class="container" id="navigation-content">
     <div class="tab-titles" >
         <p class="tab-links active-link" onclick="opentab('Introduction-Content')">Introduction</p>
-        <p class="tab-links" onclick="opentab('Data-Preparation-Content')">Data Collection & Preparation</p>
+        <p class="tab-links" onclick="opentab('Data-Preparation-Content')">Data Prep</p>
         <p class="tab-links" onclick="opentab('Data-Exploration-Content')">Data Exploration (EDA)</p>
         <p class="tab-links" onclick="opentab('Clustering-Content')">Clustering</p>
         <p class="tab-links" onclick="opentab('ARM-Content')">ARM</p>
+        <p class="tab-links" onclick="opentab('NB-Content')">Naive Bayes</p>
+        <p class="tab-links" onclick="opentab('DT-Content')">Decision Tree</p>
     </div>
 
     <div class="tab-contents active-tab" id="Introduction-Content">
@@ -480,7 +482,6 @@
         </div>
     </div>
     
-
     <div class="tab-contents" id="ARM-Content">
         <div class="intro">
             <h1 class="sub-title">Association Rule Mining</h1>
@@ -532,6 +533,93 @@
             <p>The findings indicate that Fruity flavor and Wine alcohol type are the top sellers individually, showing high support. Specifically, the combination of Fruity flavor with Wine is the most commonly purchased, displaying high confidence and lift. However, no significant relationships are observed among other combinations. This suggests that, in general, <b>people do not exhibit strong preferences for specific Alcohol Types and Flavors beyond Fruity flavor with Wine.</b></p>
             <br>
             <p>Find the ARM R script <a href="https://github.com/Niranjan-Cholendiran/Inventory-Optimization-WIP-/blob/main/ARM/ARM.Rmd" target="_blank">here</a></p>
+        </div>
+    </div>
+
+    <div class="tab-contents" id="NB-Content">
+        <div class="intro">
+            <h1 class="sub-title">Naive Bayes Classification</h1>
+            <br><br>
+            <p>Naive Bayes classifier is a supervised machine learning algorithm used for classification tasks. It is based on the Bayes' theorem describing the probability of a hypothesis given an evidence. Naive Bayes assumes that features are independent of each other given the class label, which is why it's called "naive."</p>
+            <br><img src="images/inventory_nb_intro1.PNG" class= "DataPrep-Step" style="max-width: 30%;"><br>
+            <br><img src="images/inventory_nb_intro2.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br>
+            <p>There are two main types of Naive Bayes classifier available:</p>
+            <br>
+            <ol>
+                <li>Multinomial Naive Bayes:  This type is suitable for features that represent counts or frequencies of events. It implements the naive bayes algorithm for multinomially distributed data.</li>
+                <li>Bernoulli Naive Bayes: This type is suitable for binary feature variables. It assumes that each feature is binary (0 or 1).</li>
+            </ol>
+            <br>
+            <p>In all Naive Bayes models, smoothing is often applied to prevent zero probabilities. This is to ensure more reliable predictions by adding a small value to observed counts of each feature during training.</p>
+
+            <br><p>From the clustering results, it was determined that products could be categorized into four groups based on their profit and demand levels. While the profit of products remains relatively stable, the demand for each product fluctuates significantly on a weekly basis. Although the average demand calculated for each cluster provides an overall value, it cannot be assumed that every product will experience the same demand consistently.</p>
+            <br><p>To address this issue, forecasting the demand for each product at least on a weekly level is necessary to predict future demand accurately and allocate products to the appropriate category. While using regression techniques to predict the exact demand value would be ideal, it may be a challenging task given the variability in demand. Therefore, to begin with, <b>we'll approach this as a classification problem aiming to predict the demand category (high vs low) by dividing products using a threshold demand value per week.</b> This threshold value will be determined as the minimum demand of the Cash Cow clustering category.</p>
+            <br>
+
+            <h3>Data Preparation</h3><br>
+            <p>Naive Bayes algorithms require labeled data for training. Therefore, a new label column named "Demand_Ctg" has been created. The dataset is structured at the week level, and the "Demand_Ctg" column is populated with either "Low" or "High" based on the Sales Quantity for that week divided by a predetermined threshold.</p>
+            <br><img src="images/inventory_DT_dataprep1.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <p>Python is utilized to build the Naive Bayes algorithm, which exclusively accepts numerical data. Hence, One-Hot encoding is employed to transform categorical data into a numerical format. Additionally, the dataset is partitioned into two disjoint sets: training and test sets at a ratio of 77% to 33%. They need to be disjoint to avoid information from the test set unintentionally influences the training process, which may lead to overfitting and inflates the performance metric.</p>
+            <br><img src="images/inventory_DT_dataprep2.PNG" class= "DataPrep-Step" style="max-width: 70%;"><br>
+            <br><p>Download the data <a href="https://drive.google.com/drive/folders/19ELwAa5q6WiNq5SzeNPIsYO2Zm90beWk?usp=sharing" target="_blank">here</a></p>
+            
+            <h3>Experiment Setup & Results</h3><br>
+            <p>A Multinomial Naive Bayes Classifier was used for classification and yeilding the following results:</p>
+            <br><img src="images/inventory_nb_result1.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br><p>Find the code <a href="https://github.com/Niranjan-Cholendiran/Inventory-Optimization/blob/main/Classification/01_Classification_DataPrep_NB_DT.ipynb" target="_blank">here</a></p>
+
+            <h3>Conclusion</h3><br>
+            <p>The Naive Bayes classifier's performance was poor as it did not capture the trends accurately. Though it was able to classify the results at 61% accuracy- it is still low and cannot be used to predict out-of-stock inventory for timely products purchase from the vendors.</p>
+            <br>
+        </div>
+    </div>
+
+    <div class="tab-contents" id="DT-Content">
+        <div class="intro">
+            <h1 class="sub-title">Decision Tree Classification</h1>
+            <br><br>
+            <p>Decision Tree classifier is a supervised machine learning algorithm used for classification tasks. It constructs a directional tree architecture by partitioning the data at every level and the leaf nodes are assigned a class label.</p>
+            <br><img src="images/inventory_DT1.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <p>There are infinite number of possible decision trees that can be constructed from a dataset based on the choice of split algorithm and stopping criteria.</p>
+            <br><img src="images/inventory_DT2.PNG" class= "DataPrep-Step" style="max-width: 70%;"><br>
+            <p>There are two split algorithms that are primarily used:</p>
+            <br>
+            <p>1. Entropy & Information Gain:</p>
+            <ul>
+                <li style="list-style-type: disc;">Entropy defines the level of uncertainity in a node. More uncertainity is recorded when more variance is observed in the data.</li>
+                <li style="list-style-type: disc;">Entropy values range between 0 to 1, with 0 being the best (lowest uncertainity) and 1 being the worst. Information gain is the opposite of Entropy that captures the amount of information gained after the split.</li>
+                <br><img src="images/inventory_entropy.PNG" class= "DataPrep-Step" style="max-width: 100%;"><br>
+            </ul>
+            <p>2. Gini Index:</p>
+            <ul>
+                <li style="list-style-type: disc;">Gini value, like Entropy, defines the level of uncertainity in a node. More uncertainity is recorded when more variance is observed in the data.</li>
+                <li style="list-style-type: disc;">Gini value in the leaf node ranges between 0 to 0.5, with 0 being the best (lowest uncertainity) and 0.5 being the worst.</li>
+                <br><img src="images/inventory_gini.PNG" class= "DataPrep-Step" style="max-width: 100%;"><br>
+            </ul>
+
+            <br><p>From the clustering results, it was determined that products could be categorized into four groups based on their profit and demand levels. While the profit of products remains relatively stable, the demand for each product fluctuates significantly on a weekly basis. Although the average demand calculated for each cluster provides an overall value, it cannot be assumed that every product will experience the same demand consistently.</p>
+            <br><p>To address this issue, forecasting the demand for each product at least on a weekly level is necessary to predict future demand accurately and allocate products to the appropriate category. While using regression techniques to predict the exact demand value would be ideal, it may be a challenging task given the variability in demand. Therefore, to begin with, <b>we'll approach this as a classification problem aiming to predict the demand category (high vs low) by dividing products using a threshold demand value per week.</b> This threshold value will be determined as the minimum demand of the Cash Cow clustering category.</p>
+            <br>
+
+            <h3>Data Preparation</h3><br>
+            <p>Decision Tree algorithms require labeled data for training. Therefore, a new label column named "Demand_Ctg" has been created. The dataset is structured at the week level, and the "Demand_Ctg" column is populated with either "Low" or "High" based on the Sales Quantity for that week divided by a predetermined threshold.</p>
+            <br><img src="images/inventory_DT_dataprep1.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <p>Python is utilized to build the Decision Tree algorithm, which exclusively accepts numerical data. Hence, One-Hot encoding is employed to transform categorical data into a numerical format. Additionally, the dataset is partitioned into two disjoint sets: training and test sets at a ratio of 77% to 33%. They need to be disjoint to avoid information from the test set unintentionally influences the training process, which may lead to overfitting and inflates the performance metric.</p>
+            <br><img src="images/inventory_DT_dataprep2.PNG" class= "DataPrep-Step" style="max-width: 70%;"><br>
+            <br><p>Download the data <a href="https://drive.google.com/drive/folders/19ELwAa5q6WiNq5SzeNPIsYO2Zm90beWk?usp=sharing" target="_blank">here</a></p>
+
+            <h3>Experiment Setup & Results</h3><br>
+            <p>Three Decision Tree Classifiers were built for classification and they yielded the following results:</p>
+            <br><img src="images/inventory_DT_result2.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <p>Decision Tree with Gini criterion and controlled max depth reduced overfitting and yielded the best result.</p>
+            <br><img src="images/inventory_DT_result1.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br><p>Find the full tree image <a href="https://drive.google.com/file/d/1TzRLMWEyUfJ--wfUVIMduAKReXBdgtu1/view?usp=sharing" target="_blank">here</a></p>
+            <br><p>Find the code <a href="https://github.com/Niranjan-Cholendiran/Inventory-Optimization/blob/main/Classification/01_Classification_DataPrep_NB_DT.ipynb" target="_blank">here</a></p>
+
+            <h3>Conclusion</h3><br>
+            <p>The Decision Tree classifier outperformed the Naive Bayes classifier, capturing trends more effectively and achieving higher accuracy. Overall, we have developed a model capable of predicting the demand category of a product solely based on product information, selling price, and the week of analysis. This predictive capability can be leveraged to anticipate out-of-stock inventory and facilitate timely purchase products from the vendors.</p>
+            <br>
         </div>
     </div>
 

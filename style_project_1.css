@@ -301,10 +301,13 @@ nav ul li:hover .sub-menu-1 ul li{
 
 .tab-titles{
     display: flex;
-    width: 100%;
-    margin: 4% 5% 3%;
+    width: 110%;
+    margin: 4% 0% 3%;
     align-content: center;
+}
 
+.tab-titles p{
+    font-size: medium;
 }
 
 .tab-links{
