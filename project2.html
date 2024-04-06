@@ -55,6 +55,9 @@
                                                         <li><a href="#Clustering-Content" onclick="opentab('Clustering-Content')">Clustering</a></li>
                                                         <li><a href="#LDA-Content" onclick="opentab('LDA-Content')">LDA</a></li>
                                                         <li><a href="#ARM-Content" onclick="opentab('ARM-Content')">ARM</a></li>
+                                                        <li><a href="#NB-Content" onclick="opentab('NB-Content')">Naïve Bayes</a></li>
+                                                        <li><a href="#DT-Content" onclick="opentab('DT-Content')">Decision Tree</a></li>
+                                                        <li><a href="#SVM-Content" onclick="opentab('SVM-Content')">SVM</a></li>
                                                     </ul>
                                                 </div>
                                             </li>
@@ -94,10 +97,13 @@
 <div class="container" id="navigation-content">
     <div class="tab-titles" >
         <p class="tab-links active-link" onclick="opentab('Introduction-Content')">Introduction</p>
-        <p class="tab-links" onclick="opentab('Data-Preparation-Content')">Data Collection & Preparation</p>
+        <p class="tab-links" onclick="opentab('Data-Preparation-Content')">Data Preparation</p>
         <p class="tab-links" onclick="opentab('Clustering-Content')">Clustering</p>
         <p class="tab-links" onclick="opentab('LDA-Content')">LDA</p>
         <p class="tab-links" onclick="opentab('ARM-Content')">ARM</p>
+        <p class="tab-links" onclick="opentab('NB-Content')">Naïve Bayes</p>
+        <p class="tab-links" onclick="opentab('DT-Content')">Decision Tree</p>
+        <p class="tab-links" onclick="opentab('SVM-Content')">SVM</p>
     </div>
 
     <div class="tab-contents active-tab" id="Introduction-Content">
@@ -353,8 +359,6 @@
         </div>
     </div>
 
-
-
     <div class="tab-contents" id="LDA-Content">
         <div class="intro">
             <h1 class="sub-title">Latent Dirichlet Allocation (LDA)</h1>
@@ -472,6 +476,129 @@
 
             <h3>Conclusion</h3><br>
             <p>ARM results are not straight forward and not every rule represents a topic, however it indicates that many customers have written about the cleanliness of the vehicle and customer service.</p>
+            <br>
+        </div>
+    </div>
+
+    <div class="tab-contents" id="NB-Content">
+        <div class="intro">
+            <h1 class="sub-title">Naive Bayes Classification</h1>
+            <br><br>
+            <p>Naive Bayes classifier is a supervised machine learning algorithm used for classification tasks. It is based on the Bayes' theorem describing the probability of a hypothesis given an evidence. Naive Bayes assumes that features are independent of each other given the class label, which is why it's called "naive."</p>
+            <br><img src="images/inventory_nb_intro1.PNG" class= "DataPrep-Step" style="max-width: 30%;"><br>
+            <br><img src="images/inventory_nb_intro2.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br>
+            <p>There are two main types of Naive Bayes classifier available:</p>
+            <br>
+            <ol>
+                <li>Multinomial Naive Bayes:  This type is suitable for features that represent counts or frequencies of events. It implements the naive bayes algorithm for multinomially distributed data.</li>
+                <li>Bernoulli Naive Bayes: This type is suitable for binary feature variables. It assumes that each feature is binary (0 or 1).</li>
+            </ol>
+            <br>
+            <p>In all Naive Bayes models, smoothing is often applied to prevent zero probabilities. This is to ensure more reliable predictions by adding a small value to observed counts of each feature during training.</p>
+
+            <br><p>Having analyzed the LDA results, we've identified the key themes discussed in each review. Now, our focus shifts to understanding the underlying sentiment or emotion associated with these themes. This crucial step requires the development of a classification model capable of accurately discerning the sentiment expressed in each review.</p>
+            <br><p>To achieve this, we've leveraged customers' star ratings in conjunction with their corresponding reviews as the foundational elements for our classification task. Our objective is clear: <b>we aim to construct a robust classification model that effectively predicts the sentiment conveyed within each review, distinguishing between positive and negative sentiments.</b>.</p>
+            <br>
+
+            <h3>Data Preparation</h3><br>
+            <p>In order to train Naive Bayes algorithms, labeled data is essential. Hence, a new label column called "Sentiment" has been generated. The values in the "Sentiment" column are determined by the star ratings provided. Ratings higher than 3 have been categorized as "Positive," while the remaining ratings are labeled as "Negative."</p>
+            <br><img src="images/b2b_classification_dataprep1.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <p>Python is utilized to build the Naive Bayes algorithm, which exclusively accepts data that are partitioned into two disjoint sets: training and test sets. Hence, the dataset has been split at a ratio of 77% to 33%. They need to be disjoint to avoid information from the test set unintentionally influences the training process, which may lead to overfitting and inflates the performance metric.</p>
+            <br><img src="images/b2b_classification_dataprep2.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br><p>Download the data <a href="https://drive.google.com/drive/folders/1SK_nSuh8YEwTltD1Uq_kFClbBOQdk14O?usp=drive_link" target="_blank">here</a></p>
+            <br><p>Find the data preparation code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/05_Classification/Data_Preparation.ipynb" target="_blank">here</a></p>
+
+            <h3>Experiment Setup & Results</h3><br>
+            <p>A Multinomial Naive Bayes Classifier was used for classification and yeilding the following results:</p>
+            <br><img src="images/b2c_nb_result1.PNG" class= "DataPrep-Step" style="max-width: 70%;"><br>
+            <br><p>Find the code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/05_Classification/Classification.ipynb" target="_blank">here</a></p>
+
+            <h3>Conclusion</h3><br>
+            <p>
+                The Naive Bayes classifier exhibited exceptional performance, accurately capturing trends and sentiment words. Achieving an impressive accuracy rate of 93%, this model stands as a reliable tool for accurately classifying the sentiment of future, unknown reviews. However, a few other classification models have been tested in the following sections.</p>
+            <br>
+        </div>
+    </div>
+
+    <div class="tab-contents" id="DT-Content">
+        <div class="intro">
+            <h1 class="sub-title">Decision Tree Classification</h1>
+            <br><br>
+            <p>Decision Tree classifier is a supervised machine learning algorithm used for classification tasks. It constructs a directional tree architecture by partitioning the data at every level and the leaf nodes are assigned a class label.</p>
+            <br><img src="images/inventory_DT1.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <p>There are infinite number of possible decision trees that can be constructed from a dataset based on the choice of split algorithm and stopping criteria.</p>
+            <br><img src="images/inventory_DT2.PNG" class= "DataPrep-Step" style="max-width: 70%;"><br>
+            <p>There are two split algorithms that are primarily used:</p>
+            <br>
+            <p>1. Entropy & Information Gain:</p>
+            <ul>
+                <li style="list-style-type: disc;">Entropy defines the level of uncertainity in a node. More uncertainity is recorded when more variance is observed in the data.</li>
+                <li style="list-style-type: disc;">Entropy values range between 0 to 1, with 0 being the best (lowest uncertainity) and 1 being the worst. Information gain is the opposite of Entropy that captures the amount of information gained after the split.</li>
+                <br><img src="images/inventory_entropy.PNG" class= "DataPrep-Step" style="max-width: 100%;"><br>
+            </ul>
+            <p>2. Gini Index:</p>
+            <ul>
+                <li style="list-style-type: disc;">Gini value, like Entropy, defines the level of uncertainity in a node. More uncertainity is recorded when more variance is observed in the data.</li>
+                <li style="list-style-type: disc;">Gini value in the leaf node ranges between 0 to 0.5, with 0 being the best (lowest uncertainity) and 0.5 being the worst.</li>
+                <br><img src="images/inventory_gini.PNG" class= "DataPrep-Step" style="max-width: 100%;"><br>
+            </ul>
+
+            <br><p>Having analyzed the LDA results, we've identified the key themes discussed in each review. Now, our focus shifts to understanding the underlying sentiment or emotion associated with these themes. This crucial step requires the development of a classification model capable of accurately discerning the sentiment expressed in each review.</p>
+            <br><p>To achieve this, we've leveraged customers' star ratings in conjunction with their corresponding reviews as the foundational elements for our classification task. Our objective is clear: <b>we aim to construct a robust classification model that effectively predicts the sentiment conveyed within each review, distinguishing between positive and negative sentiments.</b>.</p>
+            <br>
+
+            <h3>Data Preparation</h3><br>
+            <p>In order to train Decision Tree algorithms, labeled data is essential. Hence, a new label column called "Sentiment" has been generated. The values in the "Sentiment" column are determined by the star ratings provided. Ratings higher than 3 have been categorized as "Positive," while the remaining ratings are labeled as "Negative."</p>
+            <br><img src="images/b2b_classification_dataprep1.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <p>Python is utilized to build the Decision Tree algorithm, which exclusively accepts data that are partitioned into two disjoint sets: training and test sets. Hence, the dataset has been split at a ratio of 77% to 33%. They need to be disjoint to avoid information from the test set unintentionally influences the training process, which may lead to overfitting and inflates the performance metric.</p>
+            <br><img src="images/b2b_classification_dataprep2.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br><p>Download the data <a href="https://drive.google.com/drive/folders/1SK_nSuh8YEwTltD1Uq_kFClbBOQdk14O?usp=drive_link" target="_blank">here</a></p>
+            <br><p>Find the data preparation code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/05_Classification/Data_Preparation.ipynb" target="_blank">here</a></p>
+
+            <h3>Experiment Setup & Results</h3><br>
+            <p>Three Decision Tree Classifiers were built for classification and they yielded the following results:</p>
+            <br><img src="images/b2b_DT_result1.PNG" class= "DataPrep-Step" style="max-width: 70%;"><br>
+            <p>Decision Tree with entropy criterion and a depth of 100 reduced overfitting and yielded the best result.</p>
+            <br><img src="images/b2b_DT_result2.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br><p>Find the code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/05_Classification/Classification.ipynb" target="_blank">here</a></p>
+
+            <h3>Conclusion</h3><br>
+            <p>While the Decision Tree achieves a high accuracy of 88%, it prioritizes words that are not directly linked to sentiments simply because splitting the tree based on those words yields high information gain (for example, 'customer'). Consequently, although the model accurately predicts labels, there's a significant chance it may not accurately predict sentiment for complex reviews.</p>
+            <br>
+        </div>
+    </div>
+
+    <div class="tab-contents" id="SVM-Content">
+        <div class="intro">
+            <h1 class="sub-title">Support Vector Machine Classification</h1>
+            <br><br>
+            <p>Support Vector Machine (SVM) is a supervised learning algorithm used for classification tasks. In SVM, all data, including categorical data, is represented as quantitative vectors, with each row serving as a vector. It is important to convert the data into quantitative vectors for SVM's reliance on numerical features for the computation optimal decision boundary.</p>
+            <br>
+            <p>The vectors located on the boundary of the separable margins are termed support vectors. Each SVM model is designed to classify between two categories, such as 0 vs 1. SVM is particularly useful for linearly separable data, where it can effectively create a boundary between classes. However, in cases where data is not linearly separable, SVM employs kernel functions to add extra dimensions to the data, making it linearly separable.</p>
+            <br><img src="images/b2b_svm_intro2.PNG" class= "DataPrep-Step" style="max-width: 30%;"><br>
+            <br>
+            <br><p>Having analyzed the LDA results, we've identified the key themes discussed in each review. Now, our focus shifts to understanding the underlying sentiment or emotion associated with these themes. This crucial step requires the development of a classification model capable of accurately discerning the sentiment expressed in each review.</p>
+            <br><p>To achieve this, we've leveraged customers' star ratings in conjunction with their corresponding reviews as the foundational elements for our classification task.SVM is especially powerful for high-dimensional data, making it well-suited for text data. <b>Hence, SVM is used in this section to construct a classification model that effectively predicts the sentiment conveyed within each review, distinguishing between positive and negative sentiments.</b></p>
+            <br>
+
+            <h3>Data Preparation</h3><br>
+            <p>In order to train SVM algorithms, labeled data is essential. Hence, a new label column called "Sentiment" has been generated. The values in the "Sentiment" column are determined by the star ratings provided. Ratings higher than 3 have been categorized as "Positive," while the remaining ratings are labeled as "Negative."</p>
+            <br><img src="images/b2b_classification_dataprep1.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <p>Python is utilized to build the SVM algorithm, which exclusively accepts data that are partitioned into two disjoint sets: training and test sets. Hence, the dataset has been split at a ratio of 77% to 33%. They need to be disjoint to avoid information from the test set unintentionally influences the training process, which may lead to overfitting and inflates the performance metric.</p>
+            <br><img src="images/b2b_classification_dataprep2.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br><p>Download the data <a href="https://drive.google.com/drive/folders/1SK_nSuh8YEwTltD1Uq_kFClbBOQdk14O?usp=drive_link" target="_blank">here</a></p>
+            <br><p>Find the data preparation code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/05_Classification/Data_Preparation.ipynb" target="_blank">here</a></p>
+
+            <h3>Experiment Setup & Results</h3><br>
+            <p>Three combinations of SVM kernel and cost parameter were used for classification and they yielded the following results:</p>
+            <br><img src="images/b2b_svm_results1.PNG" class= "DataPrep-Step" style="max-width: 70%;"><br>
+            <p>All three combinations yeilded moreover the same result. The top positive and negative coefficients is displayed below. This visualization aids in understanding the importance of each feature (word) in the SVM model's decision-making process.</p>
+            <br><img src="images/b2b_svm_results2.png" class= "DataPrep-Step" style="max-width: 70%;"><br>
+            <br><p>Find the code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/05_Classification/Classification.ipynb" target="_blank">here</a></p>
+
+            <h3>Conclusion</h3><br>
+            <p>In comparison to the Naive Bayes and Decision Tree algorithms, the Support Vector Machine has demonstrated superior performance in accurately classifying sentiments. As a result, this SVM model stands out as a robust tool for detecting the sentiment of future reviews with precision.</p>
             <br>
         </div>
     </div>
