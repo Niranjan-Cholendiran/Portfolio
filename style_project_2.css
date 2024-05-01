@@ -297,15 +297,14 @@ nav ul li:hover .sub-menu-1 ul li{
 
 .tab-titles{
     display: flex;
-    width: 110%;
+    width: 100%;
     margin: 4% 0% 0%;
     align-content: center;
 }
 
 .tab-links{
-    margin-right: 100px;
-    font-size: 18px;
-    font-weight: 500;
+    margin-right: 50px;
+    font-weight: 20;
     cursor: pointer;
     position: relative;
     font-size: 15px;

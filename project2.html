@@ -58,6 +58,8 @@
                                                         <li><a href="#NB-Content" onclick="opentab('NB-Content')">Naïve Bayes</a></li>
                                                         <li><a href="#DT-Content" onclick="opentab('DT-Content')">Decision Tree</a></li>
                                                         <li><a href="#SVM-Content" onclick="opentab('SVM-Content')">SVM</a></li>
+                                                        <li><a href="#NN-Content" onclick="opentab('NN-Content')">Neural Network</a></li>
+                                                        <li><a href="#Conclusion-Content" onclick="opentab('Conclusion-Content')">Conclusion</a></li>
                                                     </ul>
                                                 </div>
                                             </li>
@@ -104,6 +106,9 @@
         <p class="tab-links" onclick="opentab('NB-Content')">Naïve Bayes</p>
         <p class="tab-links" onclick="opentab('DT-Content')">Decision Tree</p>
         <p class="tab-links" onclick="opentab('SVM-Content')">SVM</p>
+        <p class="tab-links" onclick="opentab('NN-Content')">Neural Network</p>
+        <p class="tab-links" onclick="opentab('Conclusion-Content')">Conclusion</p>
+
     </div>
 
     <div class="tab-contents active-tab" id="Introduction-Content">
@@ -600,6 +605,93 @@
             <h3>Conclusion</h3><br>
             <p>In comparison to the Naive Bayes and Decision Tree algorithms, the Support Vector Machine has demonstrated superior performance in accurately classifying sentiments. As a result, this SVM model stands out as a robust tool for detecting the sentiment of future reviews with precision.</p>
             <br>
+        </div>
+    </div>
+
+
+    <div class="tab-contents" id="NN-Content">
+        <div class="intro">
+            <h1 class="sub-title">Neural Netowrk</h1>
+            <br><br>
+            <p>Neural networks are computer systems inspired by the human brain. Like the neurons that fire and connect, artificial neural networks use interconnected nodes to process information. This allows them to learn and adapt to complex data, making them a powerful tool in machine learning. While traditional machine learning algorithms rely on hand-crafted features, neural networks can discover these features themselves. Additionally, there are many different neural network architectures, each suited for specific tasks. For this project, I have utilized a simple Artificial Neural Network (ANN) to classify sentiments.</p>
+            <br>
+            <br><img src="images/B2C_NN_Intro.jpg" class= "DataPrep-Step" style="max-width: 30%;"><br>
+            <br>
+            <br><p>Having analyzed the LDA results, we've identified the key themes discussed in each review. Now, our focus shifts to understanding the underlying sentiment or emotion associated with these themes. This crucial step requires the development of a classification model capable of accurately discerning the sentiment expressed in each review.</p>
+            <br><p>To achieve this, we've leveraged customers' star ratings in conjunction with their corresponding reviews as the foundational elements for our classification task.SVM is especially powerful for high-dimensional data, making it well-suited for text data. <b>Hence, Neural Network is used in this section to construct a classification model that effectively predicts the sentiment conveyed within each review, distinguishing between positive and negative sentiments.</b></p>
+            <br>
+
+            <h3>Data Preparation</h3><br>
+            <p>In order to train the NN algorithms, labeled data is essential. Hence, a new label column called "Sentiment" has been generated. The values in the "Sentiment" column are determined by the star ratings provided. Ratings higher than 3 have been categorized as "Positive," while the remaining ratings are labeled as "Negative."</p>
+            <br><img src="images/b2b_classification_dataprep1.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <p>Python is utilized to build the NN algorithm, which exclusively accepts data that are partitioned into two disjoint sets: training and test sets. Hence, the dataset has been split at a ratio of 77% to 33%. They need to be disjoint to avoid information from the test set unintentionally influences the training process, which may lead to overfitting and inflates the performance metric.</p>
+            <br><img src="images/b2b_classification_dataprep2.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br><p>Finally, the taget variable was converted to numerical values since NN expects a numerical response variable.</p>
+            <br><img src="images/B2C_NN_dataprep.png" class= "DataPrep-Step" style="max-width: 30%;"><br>
+            <br><p>Download the data <a href="https://drive.google.com/drive/folders/1SK_nSuh8YEwTltD1Uq_kFClbBOQdk14O?usp=drive_link" target="_blank">here</a></p>
+            <br><p>Find the data preparation code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/05_Classification/Data_Preparation.ipynb" target="_blank">here</a></p>
+            
+
+            <h3>Experiment Setup & Results</h3><br>
+            <p>A simple Neural Netowrk with three layers were built, where the first 2 layers were built using relu actiation function and the last layer with sigmoid function. The model was trained for 100 epochs, however the model converged at around 10 epochs:</p>
+            <br><img src="images/B2C_NN_model accuracy.png" class= "DataPrep-Step" style="max-width: 70%;"><br>
+            <p>The neural network algorithm was tested with a test data and it yeiled an accuracy of  91%.</p>
+            <br><img src="images/B2C_NN_model accuracy2.png" class= "DataPrep-Step" style="max-width: 70%;"><br>
+            <br><p>Find the code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/05_Classification/Classification_Using_NN.ipynb" target="_blank">here</a></p>
+
+            <h3>Conclusion</h3><br>
+            <p>Neural Network has yeilded a strong 91% in classifying the sentiments. From observation, it was found out that Uber has been praised by its customers for its Quality and Services with major sentiments as positive, however there were a lot of concerns around Uber driver's behavior with mostly negative reviews.</p>
+            <br>
+        </div>
+    </div>
+
+
+    <div class="tab-contents" id="Conclusion-Content">
+        <div class="intro">
+            <h1 class="sub-title">Conclusion</h1>
+            <br><br>
+            <p>This project developed a framework for monitoring a company's brand perception. This framework was applied to analyze Uber, a leading transportation service through the public opinions shared on Trustpilot. The framework allows companies to track customer sentiment and tailor strategies to improve their market standing.</p>
+            <br>
+            
+            <h3>Global Reach and Local Voice</h3><br>
+            <br><p>Uber operates in over 100 countries. Customers from various regions, including the United States, Canada, the United Kingdom, India, and Australia, shared their experiences on Trustpilot. The analysis focused on four key areas of customer feedback:</p>
+            <br><img src="images/b2c_conclusion1.png" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br><ul>
+                <li style="list-style-type: circle; color: #c0c0c0;">Convenience and Service: Customers used words like "booking," "app," and "pickup" to describe how easy it is to hail a ride through the Uber app.</li>
+                <li style="list-style-type: circle; color: #c0c0c0;">Quality and Comfort: Terms like "clean," "smooth," and "dirty" reflected customer experiences with the vehicles themselves.</li>
+                <li style="list-style-type: circle; color: #c0c0c0;">Driver Behavior: Feedback included words like "driver," "friendly," "respectful," and "professional" regarding driver interactions.</li>
+                <li style="list-style-type: circle; color: #c0c0c0;">Ride Experience: Customers used words like "bumpy," "delay," "fast," and "convenient" to describe their overall journey.</li>
+            </ul>
+            <br>
+            <h3>Mixed Bag of Reviews</h3><br>
+            <br><p>The analysis revealed a mix of positive and negative sentiments across all categories. Customers shared both compliments and complaints.</b></p>
+            <br><img src="images/b2c_conclusion2.png" class= "DataPrep-Step" style="max-width: 70%;"><br>
+            <br><ul>
+                <li style="list-style-type: circle; color: #c0c0c0;">Convenience and Service, Ride Experience: These categories received a balanced mix of positive and negative reviews</li>
+                <li style="list-style-type: circle; color: #c0c0c0;">Quality and Comfort: This category received the most positive feedback, suggesting that cleanliness and comfort are strengths for Uber.</li>
+                <li style="list-style-type: circle; color: #c0c0c0;">Driver Behavior: This category had the most negative feedback, indicating a need for improvement in driver courtesy and professionalism.</li>
+            </ul>
+
+            <br>
+            <h3>Trends and Insights</h3><br>
+            <br><p>The data showed a positive trend in customer perception of quality and comfort over the past three years. This suggests that Uber is delivering well in these areas. However, driver behavior reviews took a dip in late 2022. While there's a recent upward trend in positive reviews, it's important to address this concern.</p>
+            <br><img src="images/b2c_conclusion3.png" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br><img src="images/b2c_conclusion4.png" class= "DataPrep-Step" style="max-width: 50%;"><br>
+
+
+            <h3>Geographic Nuances</h3><br>
+            <br><p>The analysis also revealed geographic variations in sentiment. Customers in India expressed more positive sentiment, likely due to their perception of good ride quality. In contrast, Australian customers leaned towards negative feedback, possibly linked to driver behaviour issues.</p>
+            <br><img src="images/b2c_conclusion5.png" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            
+            <h3>Recommendations for Improvement</h3><br>
+            <br><ul>
+                <li style="list-style-type: circle; color: #c0c0c0;">Investigate Driver Concerns: A thorough investigation into the reasons behind negative driver behavior reviews in Australia and similar markets is recommended.</li>
+                <li style="list-style-type: circle; color: #c0c0c0;">Take Action: Based on the investigation, Uber should implement targeted solutions, such as driver training programs or stricter monitoring mechanisms, to address these concerns and improve customer experience.</li>
+            </ul>
+            <br>
+            <h3>Further Exploration</h3><br>
+            <br><p>For a more in-depth analysis, an interactive dashboard can be explored <a href="https://public.tableau.com/views/UberBrandPerceptionAnalysis/UberBrandPerception?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link" target="_blank">here</a></p>
+            
         </div>
     </div>
 
