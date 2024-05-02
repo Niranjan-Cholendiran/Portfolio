@@ -33,7 +33,7 @@
                                                     <li><a href="#ARM-Content" onclick="opentab('ARM-Content')">ARM</a></li>
                                                     <li><a href="#Clustering-Content" onclick="opentab('NB-Content')">Naïve Bayes</a></li>
                                                     <li><a href="#Clustering-Content" onclick="opentab('DT-Content')">Decision Tree</a></li>
-                                                    <li><a href="#Clustering-Content" onclick="opentab('Introduction-Content')">SVMs</a></li>
+                                                    <li><a href="#Clustering-Content" onclick="opentab('SVM-Content')">SVMs</a></li>
                                                     <li><a href="#Clustering-Content" onclick="opentab('Introduction-Content')">Regression</a></li>
                                                     <li><a href="#Clustering-Content" onclick="opentab('Introduction-Content')">Neural Nets</a></li>
                                                 </ul>
@@ -59,6 +59,8 @@
                                                     <li><a href="project2.html#navigation-content">Naïve Bayes</a></li>
                                                     <li><a href="project2.html#navigation-content">Decision Tree</a></li>
                                                     <li><a href="project2.html#navigation-content">SVM</a></li>
+                                                    <li><a href="project2.html#navigation-content">Neural Netowrk</a></li>
+                                                    <li><a href="project2.html#navigation-content">Conclusion</a></li>
                                                 </ul>
                                             </div>
                                         </li>
@@ -104,6 +106,8 @@
         <p class="tab-links" onclick="opentab('ARM-Content')">ARM</p>
         <p class="tab-links" onclick="opentab('NB-Content')">Naive Bayes</p>
         <p class="tab-links" onclick="opentab('DT-Content')">Decision Tree</p>
+        <p class="tab-links" onclick="opentab('SVM-Content')">SVM</p>
+        <p class="tab-links" onclick="opentab('Conclusion-Content')">Conclusion</p>
     </div>
 
     <div class="tab-contents active-tab" id="Introduction-Content">
@@ -623,6 +627,96 @@
             <h3>Conclusion</h3><br>
             <p>The Decision Tree classifier outperformed the Naive Bayes classifier, capturing trends more effectively and achieving higher accuracy. Overall, we have developed a model capable of predicting the demand category of a product solely based on product information, selling price, and the week of analysis. This predictive capability can be leveraged to anticipate out-of-stock inventory and facilitate timely purchase products from the vendors.</p>
             <br>
+        </div>
+    </div>
+
+    <div class="tab-contents" id="SVM-Content">
+        <div class="intro">
+            <h1 class="sub-title">Support Vector Machine Classification</h1>
+            <br><br>
+            <p>Support Vector Machine (SVM) is a supervised learning algorithm used for classification tasks. In SVM, all data, including categorical data, is represented as quantitative vectors, with each row serving as a vector. It is important to convert the data into quantitative vectors for SVM's reliance on numerical features for the computation optimal decision boundary.</p>
+            <br>
+            <p>The vectors located on the boundary of the separable margins are termed support vectors. Each SVM model is designed to classify between two categories, such as 0 vs 1. SVM is particularly useful for linearly separable data, where it can effectively create a boundary between classes. However, in cases where data is not linearly separable, SVM employs kernel functions to add extra dimensions to the data, making it linearly separable.</p>
+            <br><img src="images/b2b_svm_intro2.PNG" class= "DataPrep-Step" style="max-width: 30%;"><br>
+            <p>Kernels use dot products to compute the similarity between pairs of data points in a high-dimensional space efficiently. This similarity measure is essential for determining the decision boundary between classes and identifying support vectors. By using the dot product in hthe higher dimentional space, the model can effectively seperate the data.</p>
+            <br><img src="images/inv_svm_image4.png" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br><p>The following two kernal functions are the most popularly used ones:</p>
+            <br><img src="images/inv_svm_image2.png" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br><p>Here's an example of casting a 2D point in a higher dimension using kernal and dot products:</p>
+            <br><img src="images/inv_svm_image3.png" class= "DataPrep-Step" style="max-width: 50%;"><br>
+
+            <br><p>From the clustering results, it was determined that products could be categorized into four groups based on their profit and demand levels. While the profit of products remains relatively stable, the demand for each product fluctuates significantly on a weekly basis. Although the average demand calculated for each cluster provides an overall value, it cannot be assumed that every product will experience the same demand consistently.</p>
+            <br><p>To address this issue, forecasting the demand for each product at least on a weekly level is necessary to predict future demand accurately and allocate products to the appropriate category. While using regression techniques to predict the exact demand value would be ideal, it may be a challenging task given the variability in demand. Therefore, to begin with, <b>we'll approach this as a classification problem aiming to predict the demand category (high vs low) by dividing products using a threshold demand value per week.</b></p>
+            <br>
+
+            <h3>Data Preparation</h3><br>
+            <p>In order to train SVM algorithms, labeled data is essential. Hence, a new label column called "Sentiment" has been generated. The values in the "Sentiment" column are determined by the star ratings provided. Ratings higher than 3 have been categorized as "Positive," while the remaining ratings are labeled as "Negative."</p>
+            <br><img src="images/b2b_classification_dataprep1.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <p>Python is utilized to build the SVM algorithm, which exclusively accepts data that are partitioned into two disjoint sets: training and test sets. Hence, the dataset has been split at a ratio of 77% to 33%. They need to be disjoint to avoid information from the test set unintentionally influences the training process, which may lead to overfitting and inflates the performance metric.</p>
+            <br><img src="images/b2b_classification_dataprep2.PNG" class= "DataPrep-Step" style="max-width: 50%;"><br>
+            <br><p>Download the data <a href="https://drive.google.com/drive/folders/1SK_nSuh8YEwTltD1Uq_kFClbBOQdk14O?usp=drive_link" target="_blank">here</a></p>
+            <br><p>Find the data preparation code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/05_Classification/Data_Preparation.ipynb" target="_blank">here</a></p>
+
+            <h3>Experiment Setup & Results</h3><br>
+            <p>Three combinations of SVM kernel and cost parameter were used for classification and they yielded the following results:</p>
+            <br><img src="images/inv_svm_image5.png" class= "DataPrep-Step" style="max-width: 70%;"><br>
+            <p>All three combinations yeilded moreover the same result.</p>
+            <br><p>Find the code <a href="https://github.com/Niranjan-Cholendiran/B2C-Brand-Perception-Analysis/blob/main/05_Classification/Classification.ipynb" target="_blank">here</a></p>
+
+            <h3>Conclusion</h3><br>
+            <p>In comparison to the Decision Tree algorithms, the SVM has displayed a poor performance. Overall, we have developed a model capable of predicting the demand category of a product solely based on product information, selling price, and the week of analysis. This predictive capability can be leveraged to anticipate out-of-stock inventory and facilitate timely purchase products from the vendors.</p>
+            <br>
+        </div>
+    </div>
+
+
+    <div class="tab-contents" id="Conclusion-Content">
+        <div class="intro">
+            <h1 class="sub-title">Conclusion</h1>
+            <br><br>
+            <p>This project tackled the challenge of overstocking and understocking in retail stores. A Machine Learning model was designed to predict ideal purchase timing and quantities, preventing these issues. This solution empowers retailers to:</p>
+            <br>
+            <br><ul>
+                <li style="list-style-type: circle; color: #c0c0c0;"><b>Forecast demands a week in advance:</b> This allows for strategic purchase planning, considering vendor fulfillment time.</li>
+                <li style="list-style-type: circle; color: #c0c0c0;"><b>Optimize inventory management:</b> By understanding product categories based on profit and demand (cash cows, laggards, commodities, luxury items), retailers can prioritize high-demand, high-profit items (cash cows) while minimizing stock of low-demand, low-profit items (laggards). This ensures they have the right products available to meet customer needs and maximize profits.</li>
+                </ul>
+            <br>
+            <br><img src="images/inv_conclusion1.png" class= "DataPrep-Step" style="max-width: 70%;"><br>
+
+            <br><p>Three crucial factors were identified for calculating ideal purchase quantities and timing:</b></p>
+            <br><ul>
+                <li style="list-style-type: circle; color: #c0c0c0;"><b>Inventory Level:</b> Existing stock helps determine how much to buy.</li>
+                <li style="list-style-type: circle; color: #c0c0c0;"><b>Demand Forecast:</b> The model predicts demand for the next week, ensuring enough products are available.</li>
+                <li style="list-style-type: circle; color: #c0c0c0;"><b>Fulfillment Time:</b> Vendor lead time is factored in to avoid stockouts.</li>
+            </ul>
+
+            <br>
+            <h3>Results and Potential</h3><br>
+            <br><p>Using these factors, the model forecasted demand, calculated potential overstock/understock, and compared it to actual inventory levels. This allowed for estimation of:</p>
+            <br><ul>
+                <li style="list-style-type: circle; color: #c0c0c0;"><b>Cost Savings:</b> The model predicted potential savings of $8,000 and reduced storage needs for 300 products across just four unique items in the final ten weeks.</li>
+                <li style="list-style-type: circle; color: #c0c0c0;"><b>Scalability:</b> Projecting these savings to a larger store network and product range suggests significant financial and space optimization benefits.</li>
+            </ul>
+            <br><img src="images/inv_conclusion2.png" class= "DataPrep-Step" style="max-width: 70%;"><br>
+
+
+            <h3>Call to Action</h3><br>
+            <br><p>This project demonstrates the power of data-driven inventory management. By adopting this approach, retailers can achieve:</p>
+            <br><ul>
+                <li style="list-style-type: circle; color: #c0c0c0;"><b>Reduced Costs:</b> Lower storage expenses and minimized overstocking waste.</li>
+                <li style="list-style-type: circle; color: #c0c0c0;"><b>Increased Sales:</b> Improved stock availability to meet customer demand.</li>
+                <li style="list-style-type: circle; color: #c0c0c0;"><b>Enhanced Efficiency:</b> Streamlined purchasing and optimized storage utilization.</li>
+            </ul>
+
+            <h3>Next Steps</h3><br>
+            <br><p>While the model addresses key factors, further enhancements are possible:</p>
+            <br><ul>
+                <li style="list-style-type: circle; color: #c0c0c0;"><b>Inventory Space Integration:</b> Including available storage space in calculations can ensure efficient use of resources.</li>
+                <li style="list-style-type: circle; color: #c0c0c0;"><b>Fulfillment Cost Consideration:</b> Factoring in vendor fulfillment costs can lead to a more cost-effective solution.</li>
+            </ul>
+            <br><p>By continuously refining this model, retailers can achieve a "bulletproof" solution for inventory management, leading to a more successful and profitable business.</p>
+
+            
         </div>
     </div>
 
